@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "mediges",
+    'name': "Mediges",
 
     'summary': """
         Gestion Medica""",
@@ -9,7 +9,7 @@
         Gestion Medica
     """,
 
-    'author': "TIG",
+    'author': "Fernando Lobos",
     'website': "http://www.tig.cl",
 
     # Categories can be used to filter modules in modules listing
@@ -19,13 +19,16 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','product',],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
+        'views/product.xml',
+        'views/partner.xml',
+        'views/menus.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

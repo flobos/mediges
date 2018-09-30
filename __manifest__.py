@@ -19,7 +19,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','product',],
+    'depends': ['base','product'],
 
     # always loaded
     'data': [
@@ -28,6 +28,7 @@
         'views/templates.xml',
         'views/product.xml',
         'views/partner.xml',
+        'views/horasmedicas.xml',
         'views/menus.xml',
     ],
     # only loaded in demonstration mode

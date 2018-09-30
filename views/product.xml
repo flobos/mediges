@@ -15,9 +15,9 @@
             <field name="inherit_id" ref="product.product_template_form_view"/>
             <field name="arch" type="xml">
 
-                        <group>
-                            <field name="es_tipo_medico"/>
-                        </group>
+                <group>
+                    <field name="es_tipo_medico"/>
+                </group>
 
             </field>
         </record>

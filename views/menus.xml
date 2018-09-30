@@ -2,8 +2,16 @@
     <data>
 
         <menuitem id="main_menu_mediges" name="Mediges"/>
+
         <menuitem id="menu_productos" name="Productos Medicos" parent="main_menu_mediges" action="productos_list_action"/>
+
         <menuitem id="menu_pacientes" name="Pacientes" parent="main_menu_mediges" action="pacientes_list_action"/>
+
+        <menuitem id="menu_horas_medicas" name="Horas Medicas" parent="main_menu_mediges" action="horasmedicas_list_action"/>
+
+
+
+
 
     </data>
 </odoo>

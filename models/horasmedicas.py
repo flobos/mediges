@@ -12,6 +12,7 @@ class horasmedicas(models.Model):
     company =  fields.Many2one('res.company', string="Hora Para", required=True,readonly=True ,default=lambda self: self.env['res.company']._company_default_get('account.invoice'))
     fecha_solicitud_hora = fields.Datetime(String="Hora Reserva", required=True)
     fecha_solicitud_hora_termino = fields.Datetime(string="Hora Termino Reserva" , readonly=True)
+    tipo_prestacion = fields.Many2one('product.product', string="Prestación", required=True)
     paciente = fields.Many2one('res.partner', string="Paciente", required=True)
     forma_de_pago = fields.Many2one('mediges.formas_de_pagos', string="Forma de Pagos", required=True)
     historial = fields.Text(string="Historial")

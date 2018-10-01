@@ -3,4 +3,5 @@ from . import models
 from . import product
 from . import partner
 from . import horasmedicas
+from . import formas_de_pagos
 

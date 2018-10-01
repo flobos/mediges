@@ -29,6 +29,7 @@
         'views/product.xml',
         'views/partner.xml',
         'views/horasmedicas.xml',
+        'views/formas_de_pagos.xml',
         'views/menus.xml',
     ],
     # only loaded in demonstration mode

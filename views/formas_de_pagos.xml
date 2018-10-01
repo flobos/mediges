@@ -1,0 +1,24 @@
+<odoo>
+    <data>
+
+
+    <record model="ir.actions.act_window" id="formas_de_pagos_list_action">
+            <field name="name">Formas de Pagos</field>
+            <field name="res_model">mediges.formas_de_pagos</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    <record model="ir.ui.view" id="formas_de_pagos_tree_view">
+            <field name="name">Horas Medicas</field>
+            <field name="model">mediges.formas_de_pagos</field>
+            <field name="arch" type="xml">
+
+                <tree string="Formas de Pagos">
+                    <field name="name"/>
+                </tree>
+            </field>
+          </record>
+
+
+    </data>
+</odoo>

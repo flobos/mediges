@@ -9,6 +9,8 @@
 
         <menuitem id="menu_horas_medicas" name="Horas Medicas" parent="main_menu_mediges" action="horasmedicas_list_action"/>
 
+        <menuitem id="menu_formas_de_pagos" name="Formas de Pago" parent="main_menu_mediges" action="formas_de_pagos_list_action"/>
+
 
 
 

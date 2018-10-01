@@ -5,7 +5,7 @@
     <record model="ir.actions.act_window" id="horasmedicas_list_action">
             <field name="name">Horas Medicas</field>
             <field name="res_model">mediges.horasmedicas</field>
-            <field name="view_mode">tree,form,calendar</field>
+            <field name="view_mode">calendar,tree,form</field>
         </record>
 
     <record model="ir.ui.view" id="horas_tree_view">
@@ -25,7 +25,7 @@
             <field name="name">Horas Medicas</field>
             <field name="model">mediges.horasmedicas</field>
             <field name="arch" type="xml">
-                <calendar string="Horas Medica" date_start="fecha_solicitud_hora">
+                <calendar string="Horas Medica" date_start="fecha_solicitud_hora" date_stop="fecha_solicitud_hora_termino">
                     <field name="company"/>
 
                 </calendar>

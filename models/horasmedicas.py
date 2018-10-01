@@ -7,9 +7,10 @@ from odoo import exceptions, _
 
 class horasmedicas(models.Model):
     _name = "mediges.horasmedicas"
+    _inherit = ['mail.thread']
     _order = 'company, fecha_solicitud_hora'
 
-    company =  fields.Many2one('res.company', string="Hora Para", required=True,readonly=True ,default=lambda self: self.env['res.company']._company_default_get('account.invoice'))
+    company =  fields.Many2one('res.company', string="Doctor o Lab.", required=True,readonly=True ,default=lambda self: self.env['res.company']._company_default_get('account.invoice'))
     fecha_solicitud_hora = fields.Datetime(String="Hora Reserva", required=True)
     fecha_solicitud_hora_termino = fields.Datetime(string="Hora Termino Reserva" , readonly=True)
     tipo_prestacion = fields.Many2one('product.product', string="Prestación", required=True)
@@ -19,12 +20,14 @@ class horasmedicas(models.Model):
     diagnostico = fields.Text(string="Diagnostico")
     Observacion = fields.Text(string="Observacion")
     antecedentes_paciente = fields.Text(string="Antecedentes Paciente")
+    id_ventas = fields.Many2many('sale.order', 'horas_medicas_ventas', 'ventas_id', 'horas_id',
+                                 string="Pago Prestación", copy=False)
     state = fields.Selection([
         ('draft', "Borrador"),
         ('confirmed', "Confirmada"),
         ('pagada', "Pagada"),
         ('final', "Finalizada"),
-        ], default='draft', string="Estado")
+        ], default='draft', string="Estado", track_visibility='onchange')
 
     @api.onchange('fecha_solicitud_hora')
     def calcula_hora_termino(self):
@@ -45,4 +48,14 @@ class horasmedicas(models.Model):
     @api.multi
     def btn_finaliza_hora(self):
         self.write({'state': "final"})
+
+
+
+
+class horas_medicas_ventas(models.Model):
+   _inherit = 'sale.order'
+   hotas_medicas_vetas_id = fields.Many2many('mediges.horasmedicas', 'horas_medicas_ventas', 'horas_id', 'ventas_id', string="Pagos", copy=False)
+
+
+
 

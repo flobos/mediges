@@ -19,14 +19,41 @@
                     <field name="antecedentes_paciente"/>
                 </tree>
             </field>
-          </record>
+    </record>
+
+
+    <record model="ir.ui.view" id="horas_form_view">
+            <field name="name">Horas Medicas</field>
+            <field name="model">mediges.horasmedicas</field>
+            <field name="arch" type="xml">
+              <form string="Horas Medicas">
+                  <header>
+
+                      <button string="Confirmar" type="object" name="btn_confirma_hora" states="draft" class="oe_highlight"  />
+                      <button string="Pagada" type="object" name="btn_paga_hora" states="confirmed" class="oe_highlight"  />
+                      <button string="Finalizar" type="object" name="btn_finaliza_hora" states="pagada" class="oe_highlight"  />
+                     <field name="state" widget="statusbar" string="Estado PM"/>
+                  </header>
+                  <sheet>
+                        <group string="Datos Hora Medica">
+                            <field name="company"/>
+                            <field name="paciente" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="fecha_solicitud_hora" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="fecha_solicitud_hora_termino" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="forma_de_pago" />
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+    </record>
 
     <record id="horas_calendar" model="ir.ui.view">
             <field name="name">Horas Medicas</field>
             <field name="model">mediges.horasmedicas</field>
             <field name="arch" type="xml">
-                <calendar string="Horas Medica" date_start="fecha_solicitud_hora" date_stop="fecha_solicitud_hora_termino">
-                    <field name="company"/>
+                <calendar string="Horas Medica" date_start="fecha_solicitud_hora" date_stop="fecha_solicitud_hora_termino" color="state">
+                    <field name="paciente"/>
 
                 </calendar>
             </field>

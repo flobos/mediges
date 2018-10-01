@@ -14,16 +14,7 @@
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
-                <field name="type" position="before">
-                    <field name="rut"/>
-                </field>
-                <field name="type" position="before">
-                    <field name="numero_celular"/>
-                </field>
-                 <field name="type" position="before">
-                    <field name="fecha_nacimiento"/>
-                </field>
-               <field name="category_id" position="after">
+                <field name="category_id" position="after">
                     <field name="antecedentes_medicos"/>
                 </field>
 

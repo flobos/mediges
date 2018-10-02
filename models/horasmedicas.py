@@ -14,6 +14,7 @@ class horasmedicas(models.Model):
     fecha_solicitud_hora = fields.Datetime(String="Hora Reserva", required=True)
     fecha_solicitud_hora_termino = fields.Datetime(string="Hora Termino Reserva" , readonly=True)
     tipo_prestacion = fields.Many2one('product.product', string="Prestación", required=True)
+    valor_prestacion =  fields.Float(string="Valor Prestacion",  readonly=True ,store=True )
     paciente = fields.Many2one('res.partner', string="Paciente", required=True)
     forma_de_pago = fields.Many2one('mediges.formas_de_pagos', string="Forma de Pagos", required=True)
     historial = fields.Text(string="Historial")
@@ -32,10 +33,16 @@ class horasmedicas(models.Model):
     @api.onchange('fecha_solicitud_hora')
     def calcula_hora_termino(self):
 
-        ahora = datetime.now()
         if self.fecha_solicitud_hora != False:
             hora = fields.Datetime.from_string(self.fecha_solicitud_hora)
             self.fecha_solicitud_hora_termino = hora + timedelta(minutes=15)
+
+    @api.onchange('tipo_prestacion')
+    def calcula_valor_prestacion(self):
+
+            valor = 0
+            valor = self.tipo_prestacion.lst_price
+            self.valor_prestacion = valor
 
     @api.multi
     def btn_confirma_hora(self):

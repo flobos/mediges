@@ -44,6 +44,7 @@
                       <group string="Datos Hora Medica">
                             <field name="company"/>
                             <field name="tipo_prestacion" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="valor_prestacion" attrs="{'readonly':[('state','!=','draft')]}"/>
                             <field name="paciente" attrs="{'readonly':[('state','!=','draft')]}"/>
                             <field name="fecha_solicitud_hora" attrs="{'readonly':[('state','!=','draft')]}"/>
                             <field name="fecha_solicitud_hora_termino" attrs="{'readonly':[('state','!=','draft')]}"/>
@@ -53,8 +54,6 @@
                             <field name="id_ventas"/>
 
                       </group>
-
-
 
                   </sheet>
                   <div class="oe_chatter">

@@ -1,4 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-hm_horas,Horas Secretaria,model_mediges_horasmedicas,group_hm_secretaria,1,0,0,0
+hm_horas,Horas Secretaria,model_mediges_horasmedicas,group_hm_secretaria,1,1,1,0
+hm_horas_forma_secre,Formas Secretaria,model_mediges_formas_de_pagos,group_hm_secretaria,1,0,0,0
 hm_horas_doc,Horas Doctor,model_mediges_horasmedicas,group_hm_doctor,1,1,1,0
 hm_horas_forma,Formas Doctor,model_mediges_formas_de_pagos,group_hm_doctor,1,1,1,0

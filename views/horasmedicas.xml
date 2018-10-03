@@ -48,7 +48,7 @@
                             <field name="paciente" attrs="{'readonly':[('state','!=','draft')]}"/>
                             <field name="fecha_solicitud_hora" attrs="{'readonly':[('state','!=','draft')]}"/>
                             <field name="fecha_solicitud_hora_termino" attrs="{'readonly':[('state','!=','draft')]}"/>
-                            <field name="forma_de_pago" />
+                            <field name="forma_de_pago" domain="[('company_id','=',company)]"/>
                       </group>
                       <group string="Pago Prestación">
                             <field name="id_ventas"/>

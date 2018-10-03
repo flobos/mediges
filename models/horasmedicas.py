@@ -10,7 +10,13 @@ class horasmedicas(models.Model):
     _inherit = ['mail.thread']
     _order = 'company, fecha_solicitud_hora'
 
-    company =  fields.Many2one('res.company', string="Doctor o Lab.", required=True,readonly=True ,default=lambda self: self.env['res.company']._company_default_get('account.invoice'))
+    @api.model
+    def _parametro_company(self):
+        company_ahora = self.env['res.company']._company_default_get('account.invoice')
+        return company_ahora
+
+    company =  fields.Many2one('res.company', string="Doctor o Lab.", required=True,readonly=True ,
+                               default=lambda self: self.env['res.company']._company_default_get('account.invoice'))
     fecha_solicitud_hora = fields.Datetime(String="Hora Reserva", required=True)
     fecha_solicitud_hora_termino = fields.Datetime(string="Hora Termino Reserva" , readonly=True)
     tipo_prestacion = fields.Many2one('product.product', string="Prestación", required=True)

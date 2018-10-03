@@ -7,5 +7,8 @@ from odoo import exceptions, _
 
 class formas_de_pagos(models.Model):
     _name = "mediges.formas_de_pagos"
+    _order = 'company_id, name'
 
     name = fields.Char(string="Forma de Pago", required=True)
+    company_id = fields.Many2one('res.company', string="Doctor o Laboratorio", required=True)
+

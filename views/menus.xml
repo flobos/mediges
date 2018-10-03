@@ -3,13 +3,23 @@
 
         <menuitem id="main_menu_mediges" name="Mediges"/>
 
-        <menuitem id="menu_productos" name="Productos Medicos" parent="main_menu_mediges" action="productos_list_action"/>
 
-        <menuitem id="menu_pacientes" name="Pacientes" parent="main_menu_mediges" action="pacientes_list_action"/>
+        <menuitem id="menu_principal_horas_medicas" name="Horas Medicas" parent="main_menu_mediges" sequence="1"/>
 
-        <menuitem id="menu_horas_medicas" name="Horas Medicas" parent="main_menu_mediges" action="horasmedicas_list_action"/>
+        <menuitem id="menu_pacientes" name="Pacientes" parent="menu_principal_horas_medicas" action="pacientes_list_action" sequence="2"/>
 
-        <menuitem id="menu_formas_de_pagos" name="Formas de Pago" parent="main_menu_mediges" action="formas_de_pagos_list_action"/>
+        <menuitem id="menu_horas_medicas" name="Horas Medicas" parent="menu_principal_horas_medicas" action="horasmedicas_list_action" sequence="3"/>
+
+
+        <menuitem id="parametros_menu" name="Parametros" parent="main_menu_mediges" sequence="4"/>
+
+        <menuitem id="menu_formas_de_pagos" name="Formas de Pago" parent="parametros_menu" action="formas_de_pago_list_action" sequence="5"/>
+
+        <menuitem id="menu_productos" name="Productos Medicos" parent="parametros_menu" action="productos_list_action" sequence="6"/>
+
+
+
+
 
 
 

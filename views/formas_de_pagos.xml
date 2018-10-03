@@ -2,22 +2,41 @@
     <data>
 
 
-    <record model="ir.actions.act_window" id="formas_de_pagos_list_action">
-            <field name="name">Formas de Pagos</field>
+    <record model="ir.actions.act_window" id="formas_de_pago_list_action">
+            <field name="name">Formas de Pago</field>
             <field name="res_model">mediges.formas_de_pagos</field>
             <field name="view_mode">tree,form</field>
+
+
+
         </record>
 
-    <record model="ir.ui.view" id="formas_de_pagos_tree_view">
-            <field name="name">Horas Medicas</field>
+    <record model="ir.ui.view" id="formas_de_pago_tree_view">
+            <field name="name">Formas de Pagos</field>
             <field name="model">mediges.formas_de_pagos</field>
-            <field name="arch" type="xml">
 
-                <tree string="Formas de Pagos">
+            <field name="arch" type="xml">
+                <tree string="Formas de Pago">
+                    <field name="company_id"/>
                     <field name="name"/>
                 </tree>
             </field>
-          </record>
+    </record>
+
+    <record model="ir.ui.view" id="formas_de_pago_form_view">
+        <field name="name">Formas de Pagos</field>
+        <field name="model">mediges.formas_de_pagos</field>
+        <field name="arch" type="xml">
+          <form string="Formas de Pago">
+                <sheet>
+                    <group string="Formas de Pago">
+                        <field name="company_id"/>
+                        <field name="name" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
 
     </data>

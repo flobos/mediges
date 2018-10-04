@@ -19,9 +19,10 @@
                     <field name="tipo_prestacion"/>
                     <field name="forma_de_pago"/>
                     <field name="fecha_solicitud_hora"/>
-                    <field name="fecha_solicitud_hora"/>
                     <field name="fecha_solicitud_hora_termino"/>
                     <field name="state"/>
+                    <field name="create_uid"/>
+                    <field name="create_date"/>
 
                 </tree>
             </field>
@@ -73,6 +74,81 @@
 
                 </calendar>
             </field>
-        </record>
+    </record>
+
+
+
+    <record id="horasmedicas_doctor_list_action" model="ir.actions.act_window">
+            <field name="name">Visitas Medicas</field>
+            <field name="res_model">mediges.horasmedicas</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+    </record>
+
+     <record model="ir.ui.view" id="horasdoctor_tree_view">
+                <field name="name">Visitas</field>
+                <field name="model">mediges.horasmedicas</field>
+                <field name="arch" type="xml">
+                    <tree string="Visitas">
+                        <field name="fecha_solicitud_hora"/>
+                        <field name="fecha_solicitud_hora_termino"/>
+                        <field name="paciente"/>
+                        <field name="tipo_prestacion"/>
+                        <field name="forma_de_pago"/>
+                        <field name="state"/>
+                        <field name="create_uid"/>
+                        <field name="create_date"/>
+                        <field name="company"/>
+                    </tree>
+                </field>
+     </record>
+
+
+    <record model="ir.actions.act_window.view" id="action_horasdoctor_tree_view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="horasdoctor_tree_view"/>
+        <field name="act_window_id" ref="horasmedicas_doctor_list_action"/>
+    </record>
+
+    <record model="ir.ui.view" id="horas_doctor_form_view">
+            <field name="name">Visita</field>
+            <field name="model">mediges.horasmedicas</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+              <form string="Horas Medicas">
+
+                  <sheet>
+                      <group string="Datos Hora Medica">
+                            <field name="company"/>
+                            <field name="tipo_prestacion" />
+                            <field name="valor_prestacion" />
+                            <field name="paciente" />
+                            <field name="fecha_solicitud_hora" />
+                            <field name="fecha_solicitud_hora_termino" />
+
+                      </group>
+
+
+                  </sheet>
+                  <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                   </div>
+                </form>
+            </field>
+    </record>
+
+
+    <record model="ir.actions.act_window.view" id="action_horas_doctor_form_view">
+        <field name="sequence" eval="2"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="horas_doctor_form_view"/>
+        <field name="act_window_id" ref="horasmedicas_doctor_list_action"/>
+    </record>
+
+
+
+
     </data>
 </odoo>

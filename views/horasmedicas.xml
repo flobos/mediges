@@ -119,16 +119,28 @@
               <form string="Horas Medicas">
 
                   <sheet>
-                      <group string="Datos Hora Medica">
+                      <group>
+                          <group string="Datos Pacientes">
                             <field name="company"/>
+                            <field name="paciente" />
                             <field name="tipo_prestacion" />
                             <field name="valor_prestacion" />
-                            <field name="paciente" />
-                            <field name="fecha_solicitud_hora" />
-                            <field name="fecha_solicitud_hora_termino" />
+                            <field name="historial" />
 
+
+                          </group>
+                          <group string="Datos Visita">
+
+                                    <field name="fecha_solicitud_hora" />
+                                    <field name="fecha_solicitud_hora_termino" />
+
+
+                                    <field name="diagnostico" />
+                                    <field name="Observacion" />
+
+                            
+                          </group>
                       </group>
-
 
                   </sheet>
                   <div class="oe_chatter">

@@ -23,7 +23,7 @@ class horasmedicas(models.Model):
     valor_prestacion =  fields.Float(string="Valor Prestacion",  readonly=True ,store=True )
     paciente = fields.Many2one('res.partner', string="Paciente", required=True)
     forma_de_pago = fields.Many2one('mediges.formas_de_pagos', string="Forma de Pagos", required=True)
-    historial = fields.Text(string="Historial")
+    historial = fields.Text(string="Historial Medico")
     diagnostico = fields.Text(string="Diagnostico")
     Observacion = fields.Text(string="Observacion")
     antecedentes_paciente = fields.Text(string="Antecedentes Paciente")

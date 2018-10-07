@@ -111,6 +111,31 @@
         <field name="act_window_id" ref="horasmedicas_doctor_list_action"/>
     </record>
 
+        <record id="visitas_popup_list_action" model="ir.actions.act_window">
+            <field name="name">Visitas Previas</field>
+            <field name="res_model">mediges.horasmedicas</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.ui.view" id="visitas_popup_tree_view">
+            <field name="name">Visitas</field>
+            <field name="model">mediges.horasmedicas</field>
+            <field name="arch" type="xml">
+                <tree string="Visitas">
+                    <field name="create_date"/>
+
+                </tree>
+            </field>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="action_visitas_popup_tree_view">
+        <field name="sequence" eval="3"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="visitas_popup_tree_view"/>
+        <field name="act_window_id" ref="visitas_popup_list_action"/>
+    </record>
+
     <record model="ir.ui.view" id="horas_doctor_form_view">
             <field name="name">Visita</field>
             <field name="model">mediges.horasmedicas</field>
@@ -121,6 +146,12 @@
                      <field name="state" widget="statusbar" string="Estado Visita"/>
                   </header>
                   <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button type="action" class="oe_stat_button" icon="fa-archive"
+                                  name="%(visitas_popup_list_action)d">
+
+                        </button>
+                    </div>
                       <group>
                           <group string="Datos Pacientes">
                             <field name="company" attrs="{'readonly':[('state','!=','draft')]}"/>
@@ -164,6 +195,19 @@
         <field name="view_id" ref="horas_doctor_form_view"/>
         <field name="act_window_id" ref="horasmedicas_doctor_list_action"/>
     </record>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

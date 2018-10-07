@@ -117,29 +117,35 @@
             <field name="type">form</field>
             <field name="arch" type="xml">
               <form string="Horas Medicas">
-
+                  <header>
+                     <field name="state" widget="statusbar" string="Estado Visita"/>
+                  </header>
                   <sheet>
                       <group>
                           <group string="Datos Pacientes">
-                            <field name="company"/>
-                            <field name="paciente" />
-                            <field name="tipo_prestacion" />
-                            <field name="valor_prestacion" />
+                            <field name="company" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="paciente" attrs="{'readonly':[('state','!=','draft')]}" />
+                            <field name="tipo_prestacion" attrs="{'readonly':[('state','!=','draft')]}" />
+                            <field name="valor_prestacion" attrs="{'readonly':[('state','!=','draft')]}" />
                             <field name="historial" />
-
 
                           </group>
                           <group string="Datos Visita">
-
-                                    <field name="fecha_solicitud_hora" />
-                                    <field name="fecha_solicitud_hora_termino" />
-
-
-                                    <field name="diagnostico" />
-                                    <field name="Observacion" />
-
-                            
+                            <field name="fecha_solicitud_hora" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="fecha_solicitud_hora_termino" attrs="{'readonly':[('state','!=','draft')]}" />
+                            <field name="diagnostico" />
+                            <field name="Observacion" />
                           </group>
+                      </group>
+                      <group string="Prescripción">
+                            <field name="prescricion_id">
+                                <tree string="Productos" editable="bottom">
+                                    <field name="medicamento_id"/>
+                                    <field name="cantidad" witget="Interger"/>
+                                    <field name="tipo_unidad"/>
+                                    <field name="periodo"/>
+                                </tree>
+                            </field>
                       </group>
 
                   </sheet>

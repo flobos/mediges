@@ -111,9 +111,12 @@
         <field name="act_window_id" ref="horasmedicas_doctor_list_action"/>
     </record>
 
-        <record id="visitas_popup_list_action" model="ir.actions.act_window">
+          <!-- Visitas -->
+
+    <record id="visitas_popup_list_action" model="ir.actions.act_window">
             <field name="name">Visitas Previas</field>
             <field name="res_model">mediges.horasmedicas</field>
+             <field name="domain">[('paciente','=',default_paciente)]</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
     </record>
@@ -121,9 +124,11 @@
     <record model="ir.ui.view" id="visitas_popup_tree_view">
             <field name="name">Visitas</field>
             <field name="model">mediges.horasmedicas</field>
+            <field name="target">new</field>
             <field name="arch" type="xml">
-                <tree string="Visitas">
-                    <field name="create_date"/>
+                <tree string="Visitas" default_order="create_date desc">
+                    <field name="create_date" string="Fecha Visita"/>
+                    <field name="paciente"/>
 
                 </tree>
             </field>
@@ -148,7 +153,7 @@
                   <sheet>
                     <div class="oe_button_box" name="button_box">
                         <button type="action" class="oe_stat_button" icon="fa-archive"
-                                  name="%(visitas_popup_list_action)d">
+                                  name="%(visitas_popup_list_action)d" context="{'default_paciente':paciente}">
 
                         </button>
                     </div>

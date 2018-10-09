@@ -23,13 +23,14 @@ class horasmedicas(models.Model):
     valor_prestacion =  fields.Float(string="Valor Prestacion",  readonly=True ,store=True )
     paciente = fields.Many2one('res.partner', string="Paciente", required=True)
     forma_de_pago = fields.Many2one('mediges.formas_de_pagos', string="Forma de Pagos", required=True)
-    historial = fields.Text(string="Historial Medico" , related="paciente.antecedentes_medicos" )
+    historial = fields.Text(string="Antecedentes Medicos" , related="paciente.antecedentes_medicos" )
+    anamnesis = fields.Text(string="Anamnesis")
     diagnostico = fields.Text(string="Diagnostico")
-    Observacion = fields.Text(string="Observacion")
     antecedentes_paciente = fields.Text(string="Antecedentes Paciente")
     id_ventas = fields.Many2many('sale.order', 'horas_medicas_ventas', 'ventas_id', 'horas_id',
                                  string="Pago Prestación", copy=False)
-    prescricion_id = fields.One2many('mediges.prescricion', 'hora_medica_id', string='Prescripción')
+    prescricion_id = fields.One2many('mediges.prescricion', 'hora_medica_id', string='Indicaciones')
+    Observacion = fields.Text(string="Otras")
     state = fields.Selection([
         ('draft', "Borrador"),
         ('confirmed', "Confirmada"),

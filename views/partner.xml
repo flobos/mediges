@@ -26,8 +26,16 @@
                     <field name="fecha_nacimiento"/>
                 </field>
                 <field name="category_id" position="after">
+                    <field name="edad"/>
+                </field>
+                <field name="category_id" position="after">
                     <field name="antecedentes_medicos"/>
                 </field>
+
+                <field name="lang" position="after">
+                    <field name="horasmedicas_id"/>
+                </field>
+
 
             </field>
         </record>

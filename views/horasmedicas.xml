@@ -33,7 +33,7 @@
                 <tree string="Horas Medica">
                     <field name="company"/>
                     <field name="paciente"/>
-                    <field name="tipo_prestacion"/>
+                    <field name="tipo_prestacion" />
                     <field name="forma_de_pago"/>
                     <field name="fecha_solicitud_hora"/>
                     <field name="fecha_solicitud_hora_termino"/>
@@ -61,7 +61,8 @@
                   <sheet>
                       <group string="Datos Hora Medica">
                             <field name="company"/>
-                            <field name="tipo_prestacion" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="tipo_prestacion" attrs="{'readonly':[('state','!=','draft')]}"
+                                   options="{'no_create_edit': True, 'no_quick_create':True}"/>
                             <field name="valor_prestacion" attrs="{'readonly':[('state','!=','draft')]}"/>
                             <field name="paciente" attrs="{'readonly':[('state','!=','draft')]}"/>
                             <field name="fecha_solicitud_hora" attrs="{'readonly':[('state','!=','draft')]}"/>
@@ -124,13 +125,31 @@
         </field>
     </record>
 
+   <!-- Pivot Vistas(Visitas) -->
+   <record model="ir.ui.view" id="horas_medicas_pivot">
+            <field name="name">mediges.pivot</field>
+            <field name="model">mediges.horasmedicas</field>
+            <field name="arch" type="xml">
+                <pivot string="Resumen" display_quantity="True">
+                    <field name="forma_de_pago" type="col"/>
+                    <field name="paciente" type="row"/>
+                    <field name="valor_prestacion" type="measure"/>
+                </pivot>
+            </field>
+   </record>
+
+
+     <!-- Accion horas Doctor (Visitas) -->
+
     <record id="horasmedicas_doctor_list_action" model="ir.actions.act_window">
             <field name="name">Visitas Medicas</field>
             <field name="res_model">mediges.horasmedicas</field>
             <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,pivot</field>
             <field name="context">{"search_default_filtro_hoy":1}</field>
             <field name="search_view_id" ref="horasmedicas_search"/>
+            <field name="pivot_view_id" ref="horas_medicas_pivot"/>
+
     </record>
 
 

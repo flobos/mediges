@@ -33,6 +33,10 @@
                 </field>
 
                 <field name="lang" position="after">
+                    <field name="visitas_contador"/>
+                </field>
+
+                <field name="lang" position="after">
                     <field name="horasmedicas_id"/>
                 </field>
 

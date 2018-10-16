@@ -13,6 +13,7 @@ class pacientes(models.Model):
     fecha_nacimiento = fields.Date(string="Fecha Nacimiento", required=True)
     edad = fields.Integer(string="Edad",  readonly=True )
     horasmedicas_id = fields.One2many('mediges.horasmedicas', 'paciente', string='Visitas Medicas')
+    visitas_contador = fields.Integer(string="Cantidad de Visitas", readonly=True,store=True ,compute='_calcula_cantidad_visitas')
 
     @api.depends('horasmedicas_id.historial')
     def _calcula_total_pagos_docs(self):
@@ -23,6 +24,16 @@ class pacientes(models.Model):
                horas.update({
                'antecedentes_medicos': v_historial
                 })
+
+    @api.depends('horasmedicas_id')
+    def _calcula_cantidad_visitas(self):
+        v_visitas = 0
+        for visitas in self:
+            v_visitas = len(visitas.horasmedicas_id)
+
+            visitas.update({
+                'visitas_contador': v_visitas
+            })
 
     @api.onchange('fecha_nacimiento')
     def calculate_age(self):

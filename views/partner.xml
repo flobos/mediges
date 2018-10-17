@@ -5,7 +5,7 @@
             <field name="name">Pacientes</field>
             <field name="res_model">res.partner</field>
             <field name="view_mode">tree,form</field>
-             <field name="domain">[('is_company','=',False)]</field>
+             <field name="domain">[('is_company','=',False),('name','!=','Administrator')]</field>
         </record>
 
 

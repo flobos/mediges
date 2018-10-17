@@ -38,6 +38,7 @@ class pacientes(models.Model):
     @api.onchange('fecha_nacimiento')
     def calculate_age(self):
         today = date.today()
-        nacio = fields.Datetime.from_string(self.fecha_nacimiento)
-        v_fecha =  today.year - nacio.year - ((today.month, today.day) < (nacio.month, nacio.day))
-        self.edad = v_fecha
+        if self.fecha_nacimiento != False:
+            nacio = fields.Datetime.from_string(self.fecha_nacimiento)
+            v_fecha =  today.year - nacio.year - ((today.month, today.day) < (nacio.month, nacio.day))
+            self.edad = v_fecha

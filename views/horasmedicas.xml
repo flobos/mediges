@@ -239,7 +239,8 @@
                           <group string="Datos Pacientes">
                             <field name="company" attrs="{'readonly':[('state','!=','draft')]}"/>
                             <field name="paciente" attrs="{'readonly':[('state','!=','draft')]}" />
-                            <field name="tipo_prestacion" attrs="{'readonly':[('state','!=','draft')]}" />
+                            <field name="tipo_prestacion" attrs="{'readonly':[('state','!=','draft')]}"
+                            options="{'no_create_edit': True, 'no_quick_create':True}"/>
                             <field name="valor_prestacion" attrs="{'readonly':[('state','!=','draft')]}" />
                             <field name="historial" />
 

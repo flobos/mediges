@@ -37,7 +37,7 @@
                 </field>
 
                 <field name="lang" position="after">
-                    <field name="horasmedicas_id"/>
+                    <field name="horasmedicas_id" readonly="1"/>
                 </field>
 
 

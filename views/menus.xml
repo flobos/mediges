@@ -1,7 +1,7 @@
 <odoo>
     <data>
 
-        <menuitem id="main_menu_mediges" name="Mediges"/>
+        <menuitem id="main_menu_mediges" name="Mediges" web_icon="mediges,static/description/icon.png" />
 
 
         <menuitem id="menu_principal_horas_medicas" name="Horas Medicas" parent="main_menu_mediges" sequence="1"/>

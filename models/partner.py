@@ -4,6 +4,7 @@ from datetime import date
 from odoo.exceptions import ValidationError
 from odoo.exceptions import UserError, AccessError
 from odoo import exceptions, _
+from dateutil.relativedelta import relativedelta
 
 
 class pacientes(models.Model):
@@ -11,7 +12,7 @@ class pacientes(models.Model):
     _inherit = 'res.partner'
     antecedentes_medicos = fields.Text(string="Antecedentes Medicos")
     fecha_nacimiento = fields.Date(string="Fecha Nacimiento", required=True)
-    edad = fields.Integer(string="Edad",  readonly=True )
+    edad = fields.Integer(string="Edad",  readonly=True , compute='_calcula_edad')
     horasmedicas_id = fields.One2many('mediges.horasmedicas', 'paciente', string='Visitas Medicas')
     visitas_contador = fields.Integer(string="Cantidad de Visitas", readonly=True,store=True ,compute='_calcula_cantidad_visitas')
 
@@ -35,10 +36,13 @@ class pacientes(models.Model):
                 'visitas_contador': v_visitas
             })
 
-    @api.onchange('fecha_nacimiento')
-    def calculate_age(self):
-        today = date.today()
-        if self.fecha_nacimiento != False:
-            nacio = fields.Datetime.from_string(self.fecha_nacimiento)
-            v_fecha =  today.year - nacio.year - ((today.month, today.day) < (nacio.month, nacio.day))
-            self.edad = v_fecha
+    @api.multi
+    @api.depends('fecha_nacimiento')
+    def _calcula_edad(self):
+        hoy = date.today()
+        for record in self:
+            age = []
+            v_fecha = fields.Date.from_string(record.fecha_nacimiento)
+            gap = relativedelta(hoy, v_fecha)
+            if gap.years > 0:
+                record.edad = gap.years

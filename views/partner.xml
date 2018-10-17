@@ -45,6 +45,23 @@
             </field>
         </record>
 
+        <record model="ir.ui.view" id="pacientes_tree_view">
+            <field name="name">Pacientes</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+
+                <field name="phone" position="before">
+                    <field name="vat"/>
+                </field>
+
+                <field name="phone" position="before">
+                    <field name="mobile"/>
+                </field>
+
+            </field>
+        </record>
+
 
 
 

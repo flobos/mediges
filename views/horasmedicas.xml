@@ -61,9 +61,9 @@
                   <sheet>
                       <group string="Datos Hora Medica">
                             <field name="company"/>
-                            <field name="tipo_prestacion" attrs="{'readonly':[('state','!=','draft')]}"
+                            <field name="tipo_prestacion" domain="[('categ_id','=',3)]" attrs="{'readonly':[('state','!=','draft')]}"
                                    options="{'no_create_edit': True, 'no_quick_create':True}"/>
-                            <field name="valor_prestacion" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="valor_prestacion"  attrs="{'readonly':[('state','!=','draft')]}"/>
                             <field name="paciente" attrs="{'readonly':[('state','!=','draft')]}"/>
                             <field name="fecha_solicitud_hora" attrs="{'readonly':[('state','!=','draft')]}"/>
                             <field name="fecha_solicitud_hora_termino" attrs="{'readonly':[('state','!=','draft')]}"/>
@@ -78,7 +78,7 @@
                       <group string="Indicaciones" groups="mediges.group_hm_doctor">
                             <field name="prescricion_id" attrs="{'readonly':[('state','!=','draft')]}">
                                 <tree string="Productos" editable="bottom">
-                                    <field name="medicamento_id"/>
+                                    <field name="medicamento_id" domain="[('categ_id.name','!=',3)]"/>
                                     <field name="cantidad" witget="Interger"/>
                                     <field name="tipo_unidad"/>
                                     <field name="periodo"/>

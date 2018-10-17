@@ -32,6 +32,7 @@
         'views/horasmedicas.xml',
         'views/formas_de_pagos.xml',
         'views/menus.xml',
+        'data/product.category.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

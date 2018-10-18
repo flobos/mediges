@@ -32,6 +32,7 @@
 
                 <tree string="Horas Medica">
                     <field name="company"/>
+                    <field name="name" />
                     <field name="paciente"/>
                     <field name="tipo_prestacion" />
                     <field name="forma_de_pago"/>
@@ -59,6 +60,9 @@
                      <field name="state" widget="statusbar" string="Estado PM"/>
                   </header>
                   <sheet>
+                       <h1>
+                           <field name="name" />
+                       </h1>
                       <group string="Datos Hora Medica">
                             <field name="company"/>
                             <field name="tipo_prestacion" domain="[('categ_id','=',3)]" attrs="{'readonly':[('state','!=','draft')]}"
@@ -67,7 +71,8 @@
                             <field name="paciente" attrs="{'readonly':[('state','!=','draft')]}"/>
                             <field name="fecha_solicitud_hora" attrs="{'readonly':[('state','!=','draft')]}"/>
                             <field name="fecha_solicitud_hora_termino" attrs="{'readonly':[('state','!=','draft')]}"/>
-                            <field name="forma_de_pago" domain="[('company_id','=',company)]" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="forma_de_pago" domain="[('company_id','=',company)]" attrs="{'readonly':[('state','!=','draft')]}"
+                                    options="{'no_create_edit': True, 'no_quick_create':True}"/>
                       </group>
                       <group string="Datos Visita" groups="mediges.group_hm_doctor" >
                             <field name="fecha_solicitud_hora" attrs="{'readonly':[('state','!=','draft')]}" />
@@ -163,6 +168,7 @@
                         <field name="fecha_solicitud_hora_termino"/>
                         <field name="paciente"/>
                         <field name="tipo_prestacion"/>
+                        <field name="name" />
                         <field name="forma_de_pago"/>
                         <field name="state"/>
                         <field name="create_uid" string="Creada por"/>
@@ -229,6 +235,9 @@
                      <field name="state" widget="statusbar" string="Estado Visita"/>
                   </header>
                   <sheet>
+                      <h1>
+                           <field name="name" />
+                       </h1>
                     <div class="oe_button_box" name="button_box">
                         <button type="action" class="oe_stat_button" icon="fa-archive" string="Visitas Anteriores"
                                   name="%(visitas_popup_list_action)d" context="{'default_paciente':paciente}">
@@ -242,6 +251,8 @@
                             <field name="tipo_prestacion" attrs="{'readonly':[('state','!=','draft')]}"
                             options="{'no_create_edit': True, 'no_quick_create':True}"/>
                             <field name="valor_prestacion" attrs="{'readonly':[('state','!=','draft')]}" />
+                          <field name="forma_de_pago" domain="[('company_id','=',company)]" attrs="{'readonly':[('state','!=','draft')]}"
+                                    options="{'no_create_edit': True, 'no_quick_create':True}"/>
                             <field name="historial" />
 
                           </group>

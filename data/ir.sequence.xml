@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="True">
+        <record model='ir.sequence' id='horasmedicas_sequencia'>
+            <field name='name'>Sequencia Horas Medicadas</field>
+            <field name='code'>mediges.horasmedicas</field>
+            <field name='implementation'>standard</field>
+            <field name='prefix'>VIS/</field>
+            <field name='number_next'>1</field>
+            <field name='number_increment'>1</field>
+            <field name='padding'>4</field>
+        </record>
+
+    </data>
+</odoo>

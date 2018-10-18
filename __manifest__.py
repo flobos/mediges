@@ -33,6 +33,7 @@
         'views/formas_de_pagos.xml',
         'views/menus.xml',
         'data/product.category.xml',
+        'data/ir.sequence.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

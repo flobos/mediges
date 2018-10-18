@@ -31,6 +31,8 @@ class horasmedicas(models.Model):
                                  string="Pago Prestación", copy=False)
     prescricion_id = fields.One2many('mediges.prescricion', 'hora_medica_id', string='Indicaciones')
     Observacion = fields.Text(string="Otras")
+    name = fields.Char('Referencia', readonly=True, required=True, index=True, copy=False,
+                       default=lambda self: _('New'))
     state = fields.Selection([
         ('draft', "Borrador"),
         ('confirmed', "Confirmada"),
@@ -38,7 +40,12 @@ class horasmedicas(models.Model):
         ('final', "Finalizada"),
         ], default='draft', string="Estado", track_visibility='onchange')
 
-
+    @api.model
+    def create(self, vals):
+        if vals.get('name', _('New')) == _('New'):
+            vals['name'] = self.env['ir.sequence'].next_by_code('mediges.horasmedicas') or _('New')
+            result = super(horasmedicas, self).create(vals)
+        return result
 
     @api.onchange('fecha_solicitud_hora')
     def calcula_hora_termino(self):

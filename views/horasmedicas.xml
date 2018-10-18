@@ -29,10 +29,9 @@
             <field name="name">Horas Medicas</field>
             <field name="model">mediges.horasmedicas</field>
             <field name="arch" type="xml">
-
                 <tree string="Horas Medica">
+                   <field name="name"/>
                     <field name="company"/>
-                    <field name="name" />
                     <field name="paciente"/>
                     <field name="tipo_prestacion" />
                     <field name="forma_de_pago"/>
@@ -41,7 +40,6 @@
                     <field name="state"/>
                     <field name="create_uid" string="Creada por"/>
                     <field name="create_date" string="Creada el"/>
-
                 </tree>
             </field>
     </record>
@@ -164,11 +162,11 @@
                 <field name="model">mediges.horasmedicas</field>
                 <field name="arch" type="xml">
                     <tree string="Visitas" create="false">
+                        <field name="name"/>
                         <field name="fecha_solicitud_hora"/>
                         <field name="fecha_solicitud_hora_termino"/>
                         <field name="paciente"/>
                         <field name="tipo_prestacion"/>
-                        <field name="name" />
                         <field name="forma_de_pago"/>
                         <field name="state"/>
                         <field name="create_uid" string="Creada por"/>

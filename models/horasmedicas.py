@@ -15,6 +15,8 @@ class horasmedicas(models.Model):
         company_ahora = self.env['res.company']._company_default_get('account.invoice')
         return company_ahora
 
+    name = fields.Char('Referencia', readonly=True, required=True, index=True, copy=False,
+                       default=lambda self: _('New'))
     company =  fields.Many2one('res.company', string="Doctor o Lab.", required=True,readonly=True ,
                                default=lambda self: self.env['res.company']._company_default_get('account.invoice'))
     fecha_solicitud_hora = fields.Datetime(String="Hora Reserva", required=True)
@@ -31,8 +33,7 @@ class horasmedicas(models.Model):
                                  string="Pago Prestación", copy=False)
     prescricion_id = fields.One2many('mediges.prescricion', 'hora_medica_id', string='Indicaciones')
     Observacion = fields.Text(string="Otras")
-    name = fields.Char('Referencia', readonly=True, required=True, index=True, copy=False,
-                       default=lambda self: _('New'))
+
     state = fields.Selection([
         ('draft', "Borrador"),
         ('confirmed', "Confirmada"),

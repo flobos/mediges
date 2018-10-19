@@ -54,8 +54,7 @@
 
                       <button string="Confirmar" type="object" name="btn_confirma_hora" states="draft" class="oe_highlight"  />
                       <button string="Pagada" type="object" name="btn_paga_hora" states="confirmed" class="oe_highlight"  />
-                      <button string="Finalizar" type="object" name="btn_finaliza_hora" states="pagada" class="oe_highlight"  />
-                     <field name="state" widget="statusbar" string="Estado PM"/>
+                      <field name="state" widget="statusbar" string="Estado PM"/>
                   </header>
                   <sheet>
                        <h1>
@@ -65,15 +64,19 @@
                             <field name="company"/>
                             <field name="tipo_prestacion" domain="[('categ_id','=',3)]" attrs="{'readonly':[('state','!=','draft')]}"
                                    options="{'no_create_edit': True, 'no_quick_create':True}"/>
-                            <field name="valor_prestacion"  attrs="{'readonly':[('state','!=','draft')]}"/>
                             <field name="paciente" attrs="{'readonly':[('state','!=','draft')]}"/>
-                            <field name="fecha_solicitud_hora" attrs="{'readonly':[('state','!=','draft')]}"/>
-                            <field name="fecha_solicitud_hora_termino" attrs="{'readonly':[('state','!=','draft')]}"/>
-                            <field name="forma_de_pago" domain="[('company_id','=',company)]" attrs="{'readonly':[('state','!=','draft')]}"
+                            <field name="forma_de_pago" domain="[('company_id','=',company),('tipo_prestacion','=',tipo_prestacion)]" attrs="{'readonly':[('state','!=','draft')]}"
                                     options="{'no_create_edit': True, 'no_quick_create':True}"/>
+                            <field name="fecha_solicitud_hora" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="fecha_solicitud_hora_termino"/>
                       </group>
+                      <group string="Datos de Pago">
+                          <field name="valor_prestacion" readonly="1"/>
+                          <field name="numero_boleta"/>
+                          <field name="numero_bono"/>
+                      </group>
+
                       <group string="Datos Visita" groups="mediges.group_hm_doctor" >
-                            <field name="fecha_solicitud_hora" attrs="{'readonly':[('state','!=','draft')]}" />
                               <field name="anamnesis" attrs="{'readonly':[('state','!=','draft')]}" />
                               <field name="diagnostico"  attrs="{'readonly':[('state','!=','draft')]}" />
 

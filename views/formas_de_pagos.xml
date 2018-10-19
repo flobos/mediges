@@ -18,7 +18,10 @@
             <field name="arch" type="xml">
                 <tree string="Formas de Pago">
                     <field name="company_id"/>
+                    <field name="tipo_prestacion" domain="[('categ_id','=',3)]"
+                                   options="{'no_create_edit': True, 'no_quick_create':True}"/>
                     <field name="name"/>
+                    <field name="valor" widget='monetary' options="{'currency_field': 'currency_id'}"/>
                 </tree>
             </field>
     </record>
@@ -31,7 +34,10 @@
                 <sheet>
                     <group string="Formas de Pago">
                         <field name="company_id"/>
-                        <field name="name" />
+                        <field name="tipo_prestacion" domain="[('categ_id','=',3)]"
+                                   options="{'no_create_edit': True, 'no_quick_create':True}"/>
+                         <field name="name"/>
+                        <field name="valor" widget='monetary' options="{'currency_field': 'currency_id'}"/>
                     </group>
                 </sheet>
             </form>

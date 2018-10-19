@@ -20,14 +20,16 @@ class horasmedicas(models.Model):
     company =  fields.Many2one('res.company', string="Doctor o Lab.", required=True,readonly=True ,
                                default=lambda self: self.env['res.company']._company_default_get('account.invoice'))
     fecha_solicitud_hora = fields.Datetime(String="Hora Reserva", required=True)
-    fecha_solicitud_hora_termino = fields.Datetime(string="Hora Termino Reserva" , readonly=True)
+    fecha_solicitud_hora_termino = fields.Datetime(string="Hora Termino Reserva" , readonly=True, compute='_calcula_hora_termino')
     tipo_prestacion = fields.Many2one('product.product', string="Prestación", required=True)
-    valor_prestacion =  fields.Float(string="Valor Prestacion",  readonly=True ,store=True )
+    valor_prestacion =  fields.Float(string="Valor Prestacion",  readonly=True ,store=True, compute='_calcular_valor_prestacion' )
     paciente = fields.Many2one('res.partner', string="Paciente", required=True)
     forma_de_pago = fields.Many2one('mediges.formas_de_pagos', string="Forma de Pagos", required=True)
     historial = fields.Text(string="Antecedentes Medicos" , related="paciente.antecedentes_medicos" )
     anamnesis = fields.Text(string="Anamnesis")
     diagnostico = fields.Text(string="Diagnostico")
+    numero_boleta = fields.Integer(string="N° Boleta")
+    numero_bono = fields.Integer(string="N° Bono")
     antecedentes_paciente = fields.Text(string="Antecedentes Paciente")
     id_ventas = fields.Many2many('sale.order', 'horas_medicas_ventas', 'ventas_id', 'horas_id',
                                  string="Pago Prestación", copy=False)
@@ -38,7 +40,6 @@ class horasmedicas(models.Model):
         ('draft', "Borrador"),
         ('confirmed', "Confirmada"),
         ('pagada', "Pagada"),
-        ('final', "Finalizada"),
         ], default='draft', string="Estado", track_visibility='onchange')
 
     @api.model
@@ -48,19 +49,21 @@ class horasmedicas(models.Model):
             result = super(horasmedicas, self).create(vals)
         return result
 
-    @api.onchange('fecha_solicitud_hora')
-    def calcula_hora_termino(self):
+    @api.multi
+    @api.depends('fecha_solicitud_hora')
+    def _calcula_hora_termino(self):
+        for record in self:
+            if record.fecha_solicitud_hora != False:
+                hora = fields.Datetime.from_string(record.fecha_solicitud_hora)
+                record.fecha_solicitud_hora_termino = hora + timedelta(minutes=15)
 
-        if self.fecha_solicitud_hora != False:
-            hora = fields.Datetime.from_string(self.fecha_solicitud_hora)
-            self.fecha_solicitud_hora_termino = hora + timedelta(minutes=15)
-
-    @api.onchange('tipo_prestacion')
-    def calcula_valor_prestacion(self):
-
-            valor = 0
-            valor = self.tipo_prestacion.lst_price
-            self.valor_prestacion = valor
+    @api.multi
+    @api.depends('forma_de_pago')
+    def _calcular_valor_prestacion(self):
+        valor = 0
+        for record in self:
+            valor = record.forma_de_pago.valor
+            record.valor_prestacion = valor
 
     @api.multi
     def btn_confirma_hora(self):
@@ -69,12 +72,6 @@ class horasmedicas(models.Model):
     @api.multi
     def btn_paga_hora(self):
         self.write({'state': "pagada"})
-
-    @api.multi
-    def btn_finaliza_hora(self):
-        self.write({'state': "final"})
-
-
 
 
 class horas_medicas_ventas(models.Model):

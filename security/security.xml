@@ -28,6 +28,13 @@
             <field name="domain_force">['|',('company','=',False),('company','=',[user.company_id.id])]</field>
         </record>
 
+         <record id="formadepago_company_rule" model="ir.rule">
+            <field name="name">Formas de Pago Compañia</field>
+            <field name="model_id" ref="model_mediges_formas_de_pagos"/>
+            <field eval="True" name="global"/>
+            <field name="domain_force">['|',('company_id','=',False),('company_id','=',[user.company_id.id])]</field>
+        </record>
+
 
 
     </data>

@@ -18,10 +18,6 @@
 
 
 
-
-
-
-
                 <field name="type" position="before">
                     <field name="rut" placeholder="Ej: 13578249-2"/>
                 </field>
@@ -38,6 +34,21 @@
                 </xpath>
                 <xpath expr="//field[@name='mobile']" position="attributes">
                     <attribute name="string">Celular</attribute>
+                </xpath>
+                <xpath expr="//field[@name='mobile']" position="attributes">
+                    <attribute name="widget">phone</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='city']" position="attributes">
+                    <attribute name="placeholder"></attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='state_id']" position="attributes">
+                    <attribute name="placeholder">Comuna</attribute>
+                </xpath>
+
+                <xpath expr="//field[@name='state_id']" position="attributes">
+                    <attribute name="options">{'no_create_edit': True, 'no_quick_create':True}</attribute>
                 </xpath>
 
 

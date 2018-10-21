@@ -34,6 +34,8 @@
         'views/menus.xml',
         'data/product.category.xml',
         'data/ir.sequence.xml',
+        'data/ir.default.xml',
+        'data/res.country.state.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

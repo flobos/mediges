@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="True">
+        <record model='ir.default' id='horasmedicas_chile:default'>
+            <field name='field_id'>907</field>
+            <field name='company_id'></field>
+            <field name='json_value'>46</field>
+        </record>
+    </data>
+</odoo>

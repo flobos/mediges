@@ -15,12 +15,31 @@
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
+
+
+
+
+
+
+
+                <field name="type" position="before">
+                    <field name="rut" placeholder="Ej: 13578249-2"/>
+                </field>
+
+                <field name="mobile" position="replace">
+                </field>
+
+                <field name="type" position="before">
+                    <field name="mobile" />
+                </field>
+
                 <xpath expr="//field[@name='mobile']" position="attributes">
                     <attribute name="required">True</attribute>
                 </xpath>
-                <xpath expr="//field[@name='vat']" position="attributes">
-                    <attribute name="required">True</attribute>
+                <xpath expr="//field[@name='mobile']" position="attributes">
+                    <attribute name="string">Celular</attribute>
                 </xpath>
+
 
 
                 <field name="type" position="before">
@@ -30,7 +49,7 @@
                     <field name="edad"/>
                 </field>
                 <field name="category_id" position="after">
-                    <field name="antecedentes_medicos"/>
+                    <field name="antecedentes_medicos" groups="mediges.group_hm_doctor"/>
                 </field>
 
                 <field name="lang" position="after">

@@ -5,6 +5,7 @@ from odoo.exceptions import ValidationError
 from odoo.exceptions import UserError, AccessError
 from odoo import exceptions, _
 from dateutil.relativedelta import relativedelta
+from itertools import cycle
 
 
 class pacientes(models.Model):
@@ -15,6 +16,33 @@ class pacientes(models.Model):
     edad = fields.Integer(string="Edad",  readonly=True , compute='_calcula_edad')
     horasmedicas_id = fields.One2many('mediges.horasmedicas', 'paciente', string='Visitas Medicas')
     visitas_contador = fields.Integer(string="Cantidad de Visitas", readonly=True,store=True ,compute='_calcula_cantidad_visitas')
+    rut = fields.Char(string="Rut", required=True)
+
+    @api.multi
+    @api.onchange('rut')
+    def validarRut(self):
+      if self.rut != False:
+            rut = self.rut
+            rut = rut.upper();
+            rut = rut.replace("-", "")
+            rut = rut.replace(".", "")
+            aux = rut[:-1]
+            dv = rut[-1:]
+
+            revertido = map(int, reversed(str(aux)))
+            factors = cycle(range(2, 8))
+            s = sum(d * f for d, f in zip(revertido, factors))
+            res = (-s) % 11
+
+            if str(res) == dv:
+               True
+            elif dv == "K" and res == 10:
+                True
+            else:
+                raise ValidationError(_('Rut Invalido'))
+
+
+
 
     @api.depends('horasmedicas_id.historial')
     def _calcula_total_pagos_docs(self):

@@ -39,6 +39,10 @@
                     <attribute name="widget">phone</attribute>
                 </xpath>
 
+                <xpath expr="//field[@name='mobile']" position="attributes">
+                    <attribute name="placeholder">Ej: 98123658</attribute>
+                </xpath>
+
                 <xpath expr="//field[@name='city']" position="attributes">
                     <attribute name="placeholder"></attribute>
                 </xpath>
@@ -82,7 +86,7 @@
             <field name="arch" type="xml">
 
                 <field name="phone" position="before">
-                    <field name="vat"/>
+                    <field name="rut"/>
                 </field>
 
                 <field name="phone" position="before">

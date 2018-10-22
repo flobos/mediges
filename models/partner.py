@@ -11,12 +11,19 @@ from itertools import cycle
 class pacientes(models.Model):
 
     _inherit = 'res.partner'
+
+
     antecedentes_medicos = fields.Text(string="Antecedentes Medicos")
     fecha_nacimiento = fields.Date(string="Fecha Nacimiento", required=True)
     edad = fields.Integer(string="Edad",  readonly=True , compute='_calcula_edad')
     horasmedicas_id = fields.One2many('mediges.horasmedicas', 'paciente', string='Visitas Medicas')
     visitas_contador = fields.Integer(string="Cantidad de Visitas", readonly=True,store=True ,compute='_calcula_cantidad_visitas')
     rut = fields.Char(string="Rut", required=True)
+
+    _sql_constraints = [
+        ('rut_unico', 'unique(rut)', 'Este RUT ya esta registrado ... !'),
+    ]
+
 
     @api.multi
     @api.onchange('rut')

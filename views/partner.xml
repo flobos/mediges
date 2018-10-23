@@ -40,7 +40,7 @@
                 </xpath>
 
                 <xpath expr="//field[@name='mobile']" position="attributes">
-                    <attribute name="placeholder">Ej: 98123658</attribute>
+                    <attribute name="placeholder">Ej: 987123658</attribute>
                 </xpath>
 
                 <xpath expr="//field[@name='city']" position="attributes">

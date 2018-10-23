@@ -16,14 +16,28 @@
         </field>
     </record>
 
+  <record model="ir.ui.view" id="horas_medicas_pivot_secre">
+            <field name="name">mediges.pivot.secre</field>
+            <field name="model">mediges.horasmedicas</field>
+            <field name="arch" type="xml">
+                <pivot string="Resumen" >
+                    <field name="forma_de_pago" type="col"/>
+                    <field name="paciente" type="row"/>
+                    <field name="valor_prestacion" type="measure"/>
+                </pivot>
+            </field>
+   </record>
 
     <record model="ir.actions.act_window" id="horasmedicas_list_action">
             <field name="name">Horas Medicas</field>
             <field name="res_model">mediges.horasmedicas</field>
-            <field name="view_mode">calendar,tree,form</field>
+            <field name="view_mode">calendar,tree,form,pivot</field>
             <field name="context">{"search_default_filtro_hoy":1}</field>
             <field name="search_view_id" ref="horasmedicas_search_secre"/>
-        </record>
+            <field name="pivot_view_id" ref="horas_medicas_pivot_secre"/>
+    </record>
+
+
 
     <record model="ir.ui.view" id="horas_tree_view">
             <field name="name">Horas Medicas</field>
@@ -265,9 +279,9 @@
                           </group>
                       </group>
                       <group string="Indicaciones">
-                            <field name="prescricion_id">
+                            <field name="prescricion_id" >
                                 <tree string="Productos" editable="bottom">
-                                    <field name="medicamento_id"/>
+                                    <field name="medicamento_id" domain="[('categ_id','!=',3)]"/>
                                     <field name="cantidad" witget="Interger"/>
                                     <field name="tipo_unidad"/>
                                     <field name="periodo"/>

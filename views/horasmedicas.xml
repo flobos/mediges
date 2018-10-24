@@ -102,6 +102,7 @@
                                     <field name="cantidad" witget="Interger"/>
                                     <field name="tipo_unidad"/>
                                     <field name="periodo"/>
+                                    <field name="observacion"/>
                                 </tree>
                             </field>
                             <field name="Observacion" attrs="{'readonly':[('state','!=','draft')]}" />
@@ -285,6 +286,7 @@
                                     <field name="cantidad" witget="Interger"/>
                                     <field name="tipo_unidad"/>
                                     <field name="periodo"/>
+                                    <field name="observacion"/>
                                 </tree>
                             </field>
                             <field name="Observacion" />

@@ -13,6 +13,7 @@ class prescricion(models.Model):
     tipo_unidad = fields.Many2one('product.uom', string="Tipo unidad", required=True)
     periodo = fields.Many2one('mediges.periodo', string="Cada", required=True)
     hora_medica_id = fields.Many2one('mediges.horasmedicas', string="Hora Medica")
+    observacion = fields.Char(string="Observacion")
 
 
 

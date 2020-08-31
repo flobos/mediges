@@ -39,9 +39,9 @@
                   <br/>
               </group>
               <group string="Signos Vitales">
-                <field name="estatura"/>
+                <field name="estatura" placeholder="en cm."/>
                   <br/>
-                <field name="peso"/>
+                <field name="peso" placeholder="en kgs."/>
                   <br/>
                 <field name="imc"/>
                   <br/>

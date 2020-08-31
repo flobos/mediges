@@ -1,0 +1,37 @@
+<odoo>
+    <data>
+    <record model="ir.actions.act_window" id="demografia_list_action">
+            <field name="name">Demografia</field>
+            <field name="res_model">mediges.demografia</field>
+            <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.ui.view" id="demografia_tree_view">
+            <field name="name">Demografia</field>
+            <field name="model">mediges.demografia</field>
+
+            <field name="arch" type="xml">
+                <tree string="Demografia">
+                    <field name="name"/>
+
+                </tree>
+            </field>
+    </record>
+
+    <record model="ir.ui.view" id="demografia_form_view">
+        <field name="name">Demografia</field>
+        <field name="model">mediges.demografia</field>
+        <field name="arch" type="xml">
+          <form string="Demografia">
+                <sheet>
+                    <group string="Formas de Pago">
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    </data>
+</odoo>

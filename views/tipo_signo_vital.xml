@@ -1,0 +1,37 @@
+<odoo>
+    <data>
+    <record model="ir.actions.act_window" id="tipo_signo_vital_list_action">
+            <field name="name">Tipo Signo Vital</field>
+            <field name="res_model">mediges.tipo_signo_vital</field>
+            <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.ui.view" id="tipo_signo_vital_tree_view">
+            <field name="name">Tipo Signo Vital</field>
+            <field name="model">mediges.tipo_signo_vital</field>
+
+            <field name="arch" type="xml">
+                <tree string="Signos Vitales">
+                    <field name="name"/>
+
+                </tree>
+            </field>
+    </record>
+
+    <record model="ir.ui.view" id="tipo_signo_vital_form_view">
+        <field name="name">Tipo Signo Vital</field>
+        <field name="model">mediges.tipo_signo_vital</field>
+        <field name="arch" type="xml">
+          <form string="Tipo Signo Vital">
+                <sheet>
+                    <group string="Tipo Signos Vitales">
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    </data>
+</odoo>

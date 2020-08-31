@@ -6,10 +6,7 @@
             <field name="name">Formas de Pago</field>
             <field name="res_model">mediges.formas_de_pagos</field>
             <field name="view_mode">tree,form</field>
-
-
-
-        </record>
+    </record>
 
     <record model="ir.ui.view" id="formas_de_pago_tree_view">
             <field name="name">Formas de Pagos</field>

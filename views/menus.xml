@@ -12,14 +12,18 @@
 
         <menuitem id="menu_horas_medicas_doctor" name="Visitas" parent="menu_principal_horas_medicas" action="horasmedicas_doctor_list_action" sequence="1" groups="mediges.group_hm_doctor"/>
 
-
-
         <menuitem id="parametros_menu" name="Parametros" parent="main_menu_mediges" sequence="5"/>
 
         <menuitem id="menu_formas_de_pagos" name="Formas de Pago" parent="parametros_menu" action="formas_de_pago_list_action" sequence="6" groups="mediges.group_hm_doctor"/>
 
         <menuitem id="menu_productos" name="Productos Medicos" parent="parametros_menu" action="productos_list_action" sequence="7" groups="mediges.group_hm_doctor"/>
 
+        <menuitem id="main_menu_protocolos" name="Protocolos" web_icon="protocolos,static/description/protocol.png" />
+        <menuitem id="menu_principal_visitas" name="Visitas" parent="main_menu_protocolos" sequence="1"/>
+        <menuitem id="menu_visitas" name="Ingresar" parent="menu_principal_visitas" action="visitas_list_action" sequence="3"/>
+        <menuitem id="menu_principal_visitas_parametros" name="Parametros" parent="main_menu_protocolos" sequence="4"/>
+        <menuitem id="menu_demografia" name="Demografia" parent="menu_principal_visitas_parametros" action="demografia_list_action" sequence="5"/>
+         <menuitem id="menu_signos_vitales" name="Tipo Signos Vitales" parent="menu_principal_visitas_parametros" action="tipo_signo_vital_list_action" sequence="5"/>
 
     </data>
 </odoo>

@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <record model="ir.actions.act_window" id="visitas_list_action">
+            <field name="name">Visitas</field>
+            <field name="res_model">mediges.visitas</field>
+            <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.ui.view" id="visitas_tree_view">
+            <field name="name">Visitas</field>
+            <field name="model">mediges.visitas</field>
+            <field name="arch" type="xml">
+                <tree string="Visitas">
+                    <field name="paciente"/>
+                </tree>
+            </field>
+    </record>
+
+    <record model="ir.ui.view" id="visitas_form_view">
+        <field name="name">Visitas</field>
+        <field name="model">mediges.visitas</field>
+        <field name="arch" type="xml">
+          <form string="Formas de Pago">
+            <sheet>
+              <group string="Paciente">
+                <field name="paciente" domain="[('is_company','=',False),('name','!=','Administrator')]" />
+              </group>
+              <group string="Consentimiento">
+                <field name="consentimiento" widget="radio"/>
+                  <br/>
+                <field name="consentimiento_desde"/>
+                <field name="consentimiento_hasta"/>
+                  <br/>
+                <field name="criterios_exclusion" widget="radio"/>
+                  <br/>
+              </group>
+              <group string="Demografia">
+                <field name="demografia_id"/>
+                  <br/>
+              </group>
+              <group string="Signos Vitales">
+                <field name="estatura"/>
+                  <br/>
+                <field name="peso"/>
+                  <br/>
+                <field name="imc"/>
+                  <br/>
+                <field name="signos_vitales_id" >
+                    <tree string="Signos Vitales" editable="bottom">
+                        <field name="tipo_signo_vital"/>
+                        <field name="valor" witget="Interger"/>
+                    </tree>
+                </field>
+              </group>
+            </sheet>
+          </form>
+        </field>
+    </record>
+  </data>
+</odoo>

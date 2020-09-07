@@ -1,0 +1,37 @@
+<odoo>
+    <data>
+    <record model="ir.actions.act_window" id="enfermedades_list_action">
+            <field name="name">Enfermedades</field>
+            <field name="res_model">mediges.enfermedades</field>
+            <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.ui.view" id="enfermedades_tree_view">
+            <field name="name">Enfermedades</field>
+            <field name="model">mediges.enfermedades</field>
+
+            <field name="arch" type="xml">
+                <tree string="Enfermedades">
+                    <field name="name"/>
+
+                </tree>
+            </field>
+    </record>
+
+    <record model="ir.ui.view" id="enfermedades_form_view">
+        <field name="name">Enfermedades</field>
+        <field name="model">mediges.enfermedades</field>
+        <field name="arch" type="xml">
+          <form string="Enfermedades">
+                <sheet>
+                    <group string="Enfermedades">
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    </data>
+</odoo>

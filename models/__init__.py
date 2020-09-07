@@ -11,4 +11,6 @@ from . import signos_vitales
 from . import tipo_signo_vital
 from . import tipo_anticoncepcion
 from . import anticoncepcion
+from . import enfermedades
+from . import visitas_enfermedades
 

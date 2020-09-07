@@ -1,0 +1,28 @@
+<odoo>
+    <data>
+    <record model="ir.actions.act_window" id="visitas_enfermedades_list_action">
+            <field name="name">Visitas Enfermedades</field>
+            <field name="res_model">mediges.visitas_enfermedades</field>
+            <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+    <record model="ir.ui.view" id="visitas_enfermedades_form_view">
+        <field name="name">Visitas Enfermedades</field>
+        <field name="model">mediges.visitas_enfermedades</field>
+        <field name="arch" type="xml">
+          <form string="Historial Medico">
+                <sheet>
+                    <group string="Historial Medico">
+                        <field name="enfermedades_id"/>
+                        <field name="ano"/>
+                        <field name="tratamiento" />
+                        <field name="tratamiento_inicio"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    </data>
+</odoo>

@@ -49,6 +49,9 @@ class visitas(models.Model):
     riesgo_de_embarazo = fields.Selection([('true', 'Si'), ('false', 'No')]
                                           ,'Tiene riesgo de embarazo? (si es hombre piense en su pareja)', required=True)
     anticoncepcion_id = fields.One2many('mediges.anticoncepcion', 'visitas_id', string='Anticoncepcion')
+    #Historial Medico
+    enfermedades_id = fields.One2many('mediges.visitas_enfermedades', 'visitas_id', string='Historial Medico')
+
 
 
 

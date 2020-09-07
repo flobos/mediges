@@ -76,6 +76,9 @@
                     </tree>
                   </field>
               </group>
+              <group string="Historial Medico">
+                  <field name="enfermedades_id"/>
+              </group>
             </sheet>
           </form>
         </field>

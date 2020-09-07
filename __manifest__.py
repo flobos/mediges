@@ -37,6 +37,8 @@
         'views/tipo_signo_vital.xml',
         'views/tipo_anticoncepcion.xml',
         'views/anticoncepcion.xml',
+        'views/enfermedades.xml',
+        'views/visitas_enfermedades.xml',
         'views/menus.xml',
         'data/product.category.xml',
         'data/ir.sequence.xml',

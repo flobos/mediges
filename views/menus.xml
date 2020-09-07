@@ -23,7 +23,7 @@
         <menuitem id="menu_visitas" name="Ingresar" parent="menu_principal_visitas" action="visitas_list_action" sequence="3"/>
         <menuitem id="menu_principal_visitas_parametros" name="Parametros" parent="main_menu_protocolos" sequence="4"/>
         <menuitem id="menu_demografia" name="Demografia" parent="menu_principal_visitas_parametros" action="demografia_list_action" sequence="5"/>
-         <menuitem id="menu_signos_vitales" name="Tipo Signos Vitales" parent="menu_principal_visitas_parametros" action="tipo_signo_vital_list_action" sequence="5"/>
-
+        <menuitem id="menu_signos_vitales" name="Tipo Signos Vitales" parent="menu_principal_visitas_parametros" action="tipo_signo_vital_list_action" sequence="6"/>
+        <menuitem id="menu_tipo_anticoncepcion" name="Tipo Anticoncepcion" parent="menu_principal_visitas_parametros" action="tipo_anticoncepcion_list_action" sequence="7"/>
     </data>
 </odoo>

@@ -1,0 +1,38 @@
+<odoo>
+    <data>
+    <record model="ir.actions.act_window" id="anticoncepcion_list_action">
+            <field name="name">Anticoncepcion</field>
+            <field name="res_model">mediges.anticoncepcion</field>
+            <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.ui.view" id="anticoncepcion_tree_view">
+            <field name="name">Anticoncepcion</field>
+            <field name="model">mediges.anticoncepcion</field>
+
+            <field name="arch" type="xml">
+                <tree string="Signos Vitales">
+                    <field name="tipo_anticoncepcion_id"/>
+                    <field name="cuando"/>
+                    <field name="cual"/>
+                </tree>
+            </field>
+    </record>
+
+    <record model="ir.ui.view" id="anticoncepcion_form_view">
+        <field name="name">Anticoncepcion</field>
+        <field name="model">mediges.anticoncepcion</field>
+        <field name="arch" type="xml">
+          <form string="Anticoncepcion">
+                <sheet>
+                    <group string="Anticoncepcion">
+                        <field name="tipo_anticoncepcion_id"/>
+                        <field name="cuando"/>
+                        <field name="cual"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    </data>
+</odoo>

@@ -1,0 +1,37 @@
+<odoo>
+    <data>
+    <record model="ir.actions.act_window" id="tipo_anticoncepcion_list_action">
+            <field name="name">Tipo Anticoncepcion</field>
+            <field name="res_model">mediges.tipo_anticoncepcion</field>
+            <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.ui.view" id="tipo_signo_vital_tree_view">
+            <field name="name">Tipo Anticoncepcion</field>
+            <field name="model">mediges.tipo_anticoncepcion</field>
+
+            <field name="arch" type="xml">
+                <tree string="Tipo Anticoncepcion">
+                    <field name="name"/>
+
+                </tree>
+            </field>
+    </record>
+
+    <record model="ir.ui.view" id="tipo_anticoncepcion_form_view">
+        <field name="name">Tipo Anticoncepcion</field>
+        <field name="model">mediges.tipo_anticoncepcion</field>
+        <field name="arch" type="xml">
+          <form string="Tipo Anticoncepcion">
+                <sheet>
+                    <group string="Tipo Anticoncepcion">
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    </data>
+</odoo>

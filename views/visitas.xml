@@ -48,9 +48,33 @@
                 <field name="signos_vitales_id" >
                     <tree string="Signos Vitales" editable="bottom">
                         <field name="tipo_signo_vital"/>
+
                         <field name="valor" witget="Interger"/>
+
                     </tree>
                 </field>
+                  <br/>
+              </group>
+               <group string="COVID">
+                  <field name="covid" widget="radio"/>
+                   <br/>
+                  <field name="tratamiento_covid"/>
+                   <br/>
+                  <field name="examen_covid" widget="radio"/>
+              </group>
+              <group string="Riesgo de embarazo">
+                  <field name="prueba_embaraso" widget="radio"/>
+                  <br/>
+                  <field name="edad_fertil" widget="radio"/>
+                  <br/>
+                  <field name="riesgo_de_embarazo" widget="radio"/>
+                  <field name="anticoncepcion_id" >
+                    <tree string="Anticoncepcion" editable="bottom">
+                        <field name="tipo_anticoncepcion_id"/>
+                        <field name="cuando" witget="Interger"/>
+                        <field name="cual"/>
+                    </tree>
+                  </field>
               </group>
             </sheet>
           </form>

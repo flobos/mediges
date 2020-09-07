@@ -12,6 +12,8 @@
             <field name="arch" type="xml">
                 <tree string="Visitas">
                     <field name="paciente"/>
+                    <field name="create_uid" string="Creada por"/>
+                    <field name="create_date" string="Creada el"/>
                 </tree>
             </field>
     </record>
@@ -24,6 +26,8 @@
             <sheet>
               <group string="Paciente">
                 <field name="paciente" domain="[('is_company','=',False),('name','!=','Administrator')]" />
+                <field name="numero_paciente"/>
+                <field name="demografia"/>
               </group>
               <group string="Consentimiento">
                 <field name="consentimiento" widget="radio"/>
@@ -32,10 +36,6 @@
                 <field name="consentimiento_hasta"/>
                   <br/>
                 <field name="criterios_exclusion" widget="radio"/>
-                  <br/>
-              </group>
-              <group string="Demografia">
-                <field name="demografia_id"/>
                   <br/>
               </group>
               <group string="Signos Vitales">

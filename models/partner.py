@@ -20,6 +20,7 @@ class pacientes(models.Model):
     visitas_contador = fields.Integer(string="Cantidad de Visitas", readonly=True,store=True ,compute='_calcula_cantidad_visitas')
     rut = fields.Char(string="Rut", required=True)
     numero_paciente = fields.Char(string="N° Paciente")
+    demografia_id = fields.Many2one('mediges.demografia', string="Demografia")
 
     _sql_constraints = [
         ('rut_unico', 'unique(rut)', 'Este RUT ya esta registrado ... !'),

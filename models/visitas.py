@@ -24,13 +24,15 @@ class visitas(models.Model):
 
 
     paciente = fields.Many2one('res.partner', string="Paciente", required=True)
+    numero_paciente = fields.Char(string="Numero Paciente", related='paciente.numero_paciente' , readonly=True)
+    demografia = fields.Many2one('mediges.demografia', string="Demografia", related='paciente.demografia_id'
+                                 , readonly=True)
     consentimiento = fields.Selection([('true','Si'),('false','No')]
                                       ,'Se realiza proceso de Consentimiento informado, anexo 1',required=True)
-    consentimiento_desde = fields.Datetime(String="Inicio", required=True)
-    consentimiento_hasta = fields.Datetime(String="Termino", required=True)
+    consentimiento_desde = fields.Datetime(string="Inicio", required=True)
+    consentimiento_hasta = fields.Datetime(string="Termino", required=True)
     criterios_exclusion = fields.Selection([('true', 'Si'), ('false', 'No')]
                                             ,'Se revisa Criterios de inclusión/exclusión para screening, anexo 2', required=True)
-    demografia_id = fields.Many2one('mediges.demografia', string="Demografia", required=True)
     #Examen Fisico
     estatura = fields.Integer(string="Estatura", required=True)
     peso = fields.Integer(string="Peso", required=True, )

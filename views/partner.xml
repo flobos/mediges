@@ -25,6 +25,10 @@
                     <field name="numero_paciente"/>
                 </field>
 
+                <field name="type" position="before">
+                    <field name="demografia_id"/>
+                </field>
+
                 <field name="mobile" position="replace">
                 </field>
 

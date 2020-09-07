@@ -21,6 +21,9 @@
                 <field name="type" position="before">
                     <field name="rut" placeholder="Ej: 13578249-2"/>
                 </field>
+                <field name="type" position="before">
+                    <field name="numero_paciente"/>
+                </field>
 
                 <field name="mobile" position="replace">
                 </field>

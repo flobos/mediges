@@ -19,6 +19,7 @@ class pacientes(models.Model):
     horasmedicas_id = fields.One2many('mediges.horasmedicas', 'paciente', string='Visitas Medicas')
     visitas_contador = fields.Integer(string="Cantidad de Visitas", readonly=True,store=True ,compute='_calcula_cantidad_visitas')
     rut = fields.Char(string="Rut", required=True)
+    numero_paciente = fields.Char(string="N° Paciente")
 
     _sql_constraints = [
         ('rut_unico', 'unique(rut)', 'Este RUT ya esta registrado ... !'),

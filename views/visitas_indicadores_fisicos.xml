@@ -1,0 +1,41 @@
+<odoo>
+    <data>
+
+
+    <record model="ir.actions.act_window" id="visitas_indicadores_list_action">
+            <field name="name">Indicadores Fisicos</field>
+            <field name="res_model">mediges.visitas_indicadores_fisicos</field>
+            <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.ui.view" id="visitas_indicadores_tree_view">
+            <field name="name">Indicadores Fisicos</field>
+            <field name="model">mediges.visitas_indicadores_fisicos</field>
+            <field name="arch" type="xml">
+                <tree string="Indicadores Fisicos">
+                    <field name="indicadores_fisicos_id"/>
+                    <field name="estado"/>
+                    <field name="glosa"/>
+                </tree>
+            </field>
+    </record>
+
+    <record model="ir.ui.view" id="visitas_indicadores_form_view">
+        <field name="name">Indicadores Fisicos</field>
+        <field name="model">mediges.visitas_indicadores_fisicos</field>
+        <field name="arch" type="xml">
+          <form string="Indicadores Fisicos">
+                <sheet>
+                    <group string="Indicadores Fisicos">
+                        <field name="indicadores_fisicos_id"/>
+                        <field name="estado"/>
+                        <field name="glosa"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    </data>
+</odoo>

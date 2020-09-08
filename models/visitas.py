@@ -27,6 +27,9 @@ class visitas(models.Model):
     numero_paciente = fields.Char(string="Numero Paciente", related='paciente.numero_paciente' , readonly=True)
     demografia = fields.Many2one('mediges.demografia', string="Demografia", related='paciente.demografia_id'
                                  , readonly=True)
+
+
+
     consentimiento = fields.Selection([('true','Si'),('false','No')]
                                       ,'Se realiza proceso de Consentimiento informado, anexo 1',required=True)
     consentimiento_desde = fields.Datetime(string="Inicio", required=True)
@@ -53,10 +56,18 @@ class visitas(models.Model):
     anticoncepcion_id = fields.One2many('mediges.anticoncepcion', 'visitas_id', string='Anticoncepcion')
     #Historial Medico
     enfermedades_id = fields.One2many('mediges.visitas_enfermedades', 'visitas_id', string='Historial Medico')
-
-
-
-
+    tipo_visita = fields.Selection([
+        ('SCRENNING', "SCRENNING"),
+        ('RANDOMIZACION', "RANDOMIZACION"),
+        ('VISITA3', "VISITA 3"),
+        ('VISITA4', "VISITA 4"),
+        ('VISITA5', "VISITA 5"),
+        ('VISITA6', "VISITA 6"),
+        ('VISITA7', "VISITA 7"),
+        ('VISITA8', "VISITA 8"),
+        ('VISITA_RETIRO', "VISITA DE RETIRO TEMPRANO"),
+    ], default='SCRENNING', string="Tipo Visita", track_visibility='onchange')
+    visitas_indicadores_id = fields.One2many('mediges.visitas_indicadores_fisicos', 'visitas_id', string='Examen Fisico')
 
     @api.multi
     @api.depends('peso', 'estatura')

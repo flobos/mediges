@@ -26,6 +26,6 @@
         <menuitem id="menu_signos_vitales" name="Tipo Signos Vitales" parent="menu_principal_visitas_parametros" action="tipo_signo_vital_list_action" sequence="6"/>
         <menuitem id="menu_tipo_anticoncepcion" name="Tipo Anticoncepcion" parent="menu_principal_visitas_parametros" action="tipo_anticoncepcion_list_action" sequence="7"/>
         <menuitem id="menu_enfermedades" name="Enfermedades" parent="menu_principal_visitas_parametros" action="enfermedades_list_action" sequence="8"/>
-
+        <menuitem id="menu_indicadores_fisicos" name="Indicadores Fisicos" parent="menu_principal_visitas_parametros" action="indicadores_fisicos_list_action" sequence="9"/>
     </data>
 </odoo>

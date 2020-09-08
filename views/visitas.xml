@@ -22,7 +22,10 @@
         <field name="name">Visitas</field>
         <field name="model">mediges.visitas</field>
         <field name="arch" type="xml">
-          <form string="Formas de Pago">
+          <form string="Visitas">
+            <header>
+                <field name="tipo_visita" widget="statusbar" string="Progreso"/>
+            </header>
             <sheet>
               <group string="Paciente">
                 <field name="paciente" domain="[('is_company','=',False),('name','!=','Administrator')]" />
@@ -55,7 +58,10 @@
                 </field>
                   <br/>
               </group>
-               <group string="COVID">
+              <group string="Examen Fisico">
+                <field name="visitas_indicadores_id"/>
+              </group>
+              <group string="COVID">
                   <field name="covid" widget="radio"/>
                    <br/>
                   <field name="tratamiento_covid"/>

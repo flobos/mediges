@@ -39,6 +39,8 @@
         'views/anticoncepcion.xml',
         'views/enfermedades.xml',
         'views/visitas_enfermedades.xml',
+        'views/indicadores_fisicos.xml',
+        'views/visitas_indicadores_fisicos.xml',
         'views/menus.xml',
         'data/product.category.xml',
         'data/ir.sequence.xml',

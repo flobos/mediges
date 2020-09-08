@@ -6,8 +6,6 @@
             <field name="view_mode">tree,form</field>
     </record>
 
-
-
     <record model="ir.ui.view" id="visitas_enfermedades_form_view">
         <field name="name">Visitas Enfermedades</field>
         <field name="model">mediges.visitas_enfermedades</field>
@@ -24,5 +22,19 @@
             </form>
         </field>
     </record>
+
+    <record model="ir.ui.view" id="visitas_enfermedades_tree_view">
+            <field name="name">Historial Medico</field>
+            <field name="model">mediges.visitas_enfermedades</field>
+            <field name="arch" type="xml">
+                <tree string="Historial Medico">
+                    <field name="enfermedades_id"/>
+                        <field name="ano"/>
+                        <field name="tratamiento" />
+                        <field name="tratamiento_inicio"/>
+                </tree>
+            </field>
+    </record>
+
     </data>
 </odoo>

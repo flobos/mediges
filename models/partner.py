@@ -18,7 +18,7 @@ class pacientes(models.Model):
     edad = fields.Integer(string="Edad",  readonly=True , compute='_calcula_edad')
     horasmedicas_id = fields.One2many('mediges.horasmedicas', 'paciente', string='Visitas Medicas')
     visitas_contador = fields.Integer(string="Cantidad de Visitas", readonly=True,store=True ,compute='_calcula_cantidad_visitas')
-    rut = fields.Char(string="Rut", required=True)
+    rut = fields.Char(string="Rut")
     numero_paciente = fields.Char(string="N° Paciente")
     demografia_id = fields.Many2one('mediges.demografia', string="Demografia")
 

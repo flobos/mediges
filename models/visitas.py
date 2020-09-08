@@ -44,7 +44,6 @@ class visitas(models.Model):
     signos_vitales_id = fields.One2many('mediges.signos_vitales', 'visitas_id', string='Signos Vitales')
     #Antecedentes medico
     covid = fields.Selection([('true', 'Si'), ('false', 'No')], 'Tuvo COVID', required=True)
-    tratamiento_covid = fields.Char(string="Tratamiento COVID")
     examen_covid = fields.Selection([('true', 'Si'), ('false', 'No')]
                                     , 'Muestra de sangre para anticuerpos anti-SARSCoV-2', required=True)
 

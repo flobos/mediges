@@ -7,6 +7,6 @@ class visitas_indicadores_fisicos(models.Model):
     estado = fields.Selection([
         ('NORMAL', "Normal"),
         ('ANORMAL', "Anormal"),
-    ], default='NORMAL', string="Estado", track_visibility='onchange')
+    ], default='NORMAL', string="Estado", track_visibility='onchange', required=True)
     glosa = fields.Char(string="Comentario")
     visitas_id = fields.Many2one('mediges.visitas', string="Visitas", )

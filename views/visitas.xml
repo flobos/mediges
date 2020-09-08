@@ -64,8 +64,6 @@
               <group string="COVID">
                   <field name="covid" widget="radio"/>
                    <br/>
-                  <field name="tratamiento_covid"/>
-                   <br/>
                   <field name="examen_covid" widget="radio"/>
               </group>
               <group string="Riesgo de embarazo">

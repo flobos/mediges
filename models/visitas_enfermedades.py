@@ -8,4 +8,4 @@ class visitas_enfermedades(models.Model):
     visitas_id = fields.Many2one('mediges.visitas')
     ano = fields.Integer(string="Año")
     tratamiento = fields.Char(string="Tratamiento")
-    tratamiento_inicio = fields.Datetime(String="Desde cuando")
+    tratamiento_inicio = fields.Datetime(string="Inicio del tratamiento")

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="True">
+        <record model='mediges.tipo_signo_vital' id='1'>
+            <field name='name'>Frecuencia Cardiaca</field>
+        </record>
+        <record model='mediges.tipo_signo_vital' id='2'>
+            <field name='name'>Temperatura</field>
+        </record>
+        <record model='mediges.tipo_signo_vital' id='3'>
+            <field name='name'>Frecuencia Respiratoria</field>
+        </record>
+        <record model='mediges.tipo_signo_vital' id='4'>
+            <field name='name'>Presión Arterial</field>
+        </record>
+    </data>
+</odoo>

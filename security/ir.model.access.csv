@@ -1,9 +1,39 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+hm_pro_coor_visitas,Visita Coor,model_mediges_visitas,group_hm_coodinador,1,0,0,0
+hm_pro_coor_anticoncepcion,anticoncepcion Coor,model_mediges_anticoncepcion,group_hm_coodinador,1,0,0,0
+hm_pro_coor_demografia,demografia Coor,model_mediges_demografia,group_hm_coodinador,1,0,0,0
+hm_pro_coor_enfermedades,enfermedades Coor,model_mediges_enfermedades,group_hm_coodinador,1,0,0,0
+hm_pro_coor_indicadores_fisicos,indicadores fisicos Coor,model_mediges_indicadores_fisicos,group_hm_coodinador,1,0,0,0
+hm_pro_coor_signos_vitales,signos vitales Coor,model_mediges_signos_vitales,group_hm_coodinador,1,0,0,0
+hm_pro_coor_tipo_anticoncepcion,tipo anticoncepcion Coor,model_mediges_tipo_anticoncepcion,group_hm_coodinador,1,0,0,0
+hm_pro_coor_tipo_signo_vital,tipo signo vital Coor,model_mediges_tipo_signo_vital,group_hm_coodinador,1,0,0,0
+hm_pro_coor_visitas_enfermedades,visitas enfermedades Coor,model_mediges_visitas_enfermedades,group_hm_coodinador,1,0,0,0
+hm_pro_coor_visitas_indicadores_fisicos,visitas indicadores fisicos Coor,model_mediges_visitas_indicadores_fisicos,group_hm_coodinador,1,0,0,0
 hm_horas,Horas Secretaria,model_mediges_horasmedicas,group_hm_secretaria,1,1,1,0
 hm_horas_forma_secre,Formas Secretaria,model_mediges_formas_de_pagos,group_hm_secretaria,1,0,0,0
 hm_horas_prescrip_secre,Pres Secre,model_mediges_prescricion,group_hm_secretaria,1,0,0,0
 hm_horas_peri_secre,Peri Secre,model_mediges_periodo,group_hm_secretaria,1,0,0,0
+hm_pro_sec_visitas,Visita Secre,model_mediges_visitas,group_hm_secretaria,1,1,1,0
+hm_pro_sec_anticoncepcion,anticoncepcion Secre,model_mediges_anticoncepcion,group_hm_secretaria,1,1,1,0
+hm_pro_sec_demografia,demografia Secre,model_mediges_demografia,group_hm_secretaria,1,1,1,0
+hm_pro_sec_enfermedades,enfermedades Secre,model_mediges_enfermedades,group_hm_secretaria,1,1,1,0
+hm_pro_sec_indicadores_fisicos,indicadores fisicos Secre,model_mediges_indicadores_fisicos,group_hm_secretaria,1,1,1,0
+hm_pro_sec_signos_vitales,signos vitales Secre,model_mediges_signos_vitales,group_hm_secretaria,1,1,1,0
+hm_pro_sec_tipo_anticoncepcion,tipo anticoncepcion Secre,model_mediges_tipo_anticoncepcion,group_hm_secretaria,1,1,1,0
+hm_pro_sec_tipo_signo_vital,tipo signo vital Secre,model_mediges_tipo_signo_vital,group_hm_secretaria,1,1,1,0
+hm_pro_sec_visitas_enfermedades,visitas enfermedades Secre,model_mediges_visitas_enfermedades,group_hm_secretaria,1,1,1,0
+hm_pro_sec_visitas_indicadores_fisicos,visitas indicadores fisicos Secre,model_mediges_visitas_indicadores_fisicos,group_hm_secretaria,1,1,1,0
 hm_horas_doc,Horas Doctor,model_mediges_horasmedicas,group_hm_doctor,1,1,1,0
 hm_horas_prescrip,Pres Doctor,model_mediges_prescricion,group_hm_doctor,1,1,1,0
 hm_horas_peri,Peru Doctor,model_mediges_periodo,group_hm_doctor,1,1,1,0
 hm_horas_forma,Formas Doctor,model_mediges_formas_de_pagos,group_hm_doctor,1,1,1,0
+hm_pro_visitas,Visita Doctor,model_mediges_visitas,group_hm_doctor,1,1,1,0
+hm_pro_anticoncepcion,anticoncepcion Doctor,model_mediges_anticoncepcion,group_hm_doctor,1,1,1,0
+hm_pro_demografia,demografia Doctor,model_mediges_demografia,group_hm_doctor,1,1,1,0
+hm_pro_enfermedades,enfermedades Doctor,model_mediges_enfermedades,group_hm_doctor,1,1,1,0
+hm_pro_indicadores_fisicos,indicadores fisicos Doctor,model_mediges_indicadores_fisicos,group_hm_doctor,1,1,1,0
+hm_pro_signos_vitales,signos vitales Doctor,model_mediges_signos_vitales,group_hm_doctor,1,1,1,0
+hm_pro_tipo_anticoncepcion,tipo anticoncepcion Doctor,model_mediges_tipo_anticoncepcion,group_hm_doctor,1,1,1,0
+hm_pro_tipo_signo_vital,tipo signo vital Doctor,model_mediges_tipo_signo_vital,group_hm_doctor,1,1,1,0
+hm_pro_visitas_enfermedades,visitas enfermedades Doctor,model_mediges_visitas_enfermedades,group_hm_doctor,1,1,1,0
+hm_pro_visitas_indicadores_fisicos,visitas indicadores fisicos Doctor,model_mediges_visitas_indicadores_fisicos,group_hm_doctor,1,1,1,0

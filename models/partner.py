@@ -14,7 +14,7 @@ class pacientes(models.Model):
 
 
     antecedentes_medicos = fields.Text(string="Antecedentes Medicos")
-    fecha_nacimiento = fields.Date(string="Fecha Nacimiento", required=True)
+    fecha_nacimiento = fields.Date(string="Fecha Nacimiento")
     edad = fields.Integer(string="Edad",  readonly=True , compute='_calcula_edad')
     horasmedicas_id = fields.One2many('mediges.horasmedicas', 'paciente', string='Visitas Medicas')
     visitas_contador = fields.Integer(string="Cantidad de Visitas", readonly=True,store=True ,compute='_calcula_cantidad_visitas')

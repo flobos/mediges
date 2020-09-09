@@ -3,6 +3,7 @@ from odoo import api, fields, models, _
 
 class visitas(models.Model):
     _name = "mediges.visitas"
+    _inherit = ['mail.thread']
 
     @api.model
     def default_get(self, fields):

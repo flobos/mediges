@@ -9,6 +9,16 @@
 
     </record>
 
+    <record model="ir.actions.act_window.view" id="visitas_rando_list_action_tree_view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="visitas_rando_tree_view"/>
+        <field name="act_window_id" ref="visitas_rando_list_action"/>
+    </record>
+
+
+
+
     <record model="ir.ui.view" id="visitas_rando_tree_view">
             <field name="name">Randomizacion</field>
             <field name="model">mediges.visitas</field>

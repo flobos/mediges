@@ -20,12 +20,17 @@
 
         <menuitem id="main_menu_protocolos" name="Protocolos" web_icon="protocolos,static/description/protocol.png" />
         <menuitem id="menu_principal_visitas" name="Visitas" parent="main_menu_protocolos" sequence="1"/>
-        <menuitem id="menu_visitas" name="Ingresar" parent="menu_principal_visitas" action="visitas_list_action" sequence="3"/>
+        <menuitem id="menu_visitas" name="Screening" parent="menu_principal_visitas" action="visitas_list_action" sequence="3"/>
+        <menuitem id="menu_visitas_rando" name="Randomizacion" parent="menu_principal_visitas" action="visitas_rando_list_action" sequence="4"/>
+
+
         <menuitem id="menu_principal_visitas_parametros" name="Parametros" parent="main_menu_protocolos" sequence="4"/>
         <menuitem id="menu_demografia" name="Demografia" parent="menu_principal_visitas_parametros" action="demografia_list_action" sequence="5"/>
         <menuitem id="menu_signos_vitales" name="Tipo Signos Vitales" parent="menu_principal_visitas_parametros" action="tipo_signo_vital_list_action" sequence="6"/>
         <menuitem id="menu_tipo_anticoncepcion" name="Tipo Anticoncepcion" parent="menu_principal_visitas_parametros" action="tipo_anticoncepcion_list_action" sequence="7"/>
         <menuitem id="menu_enfermedades" name="Enfermedades" parent="menu_principal_visitas_parametros" action="enfermedades_list_action" sequence="8"/>
         <menuitem id="menu_indicadores_fisicos" name="Indicadores Fisicos" parent="menu_principal_visitas_parametros" action="indicadores_fisicos_list_action" sequence="9"/>
+
+
     </data>
 </odoo>

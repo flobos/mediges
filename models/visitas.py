@@ -32,27 +32,27 @@ class visitas(models.Model):
 
 
     consentimiento = fields.Selection([('true','Si'),('false','No')]
-                                      ,'Se realiza proceso de Consentimiento informado, anexo 1',required=True)
-    consentimiento_desde = fields.Datetime(string="Inicio", required=True)
-    consentimiento_hasta = fields.Datetime(string="Termino", required=True)
+                                      ,'Se realiza proceso de Consentimiento informado, anexo 1')
+    consentimiento_desde = fields.Datetime(string="Inicio")
+    consentimiento_hasta = fields.Datetime(string="Termino")
     criterios_exclusion = fields.Selection([('true', 'Si'), ('false', 'No')]
-                                            ,'Se revisa Criterios de inclusión/exclusión para screening, anexo 2', required=True)
+                                            ,'Se revisa Criterios de inclusión/exclusión para screening, anexo 2')
     #Examen Fisico
-    estatura = fields.Integer(string="Estatura", required=True)
-    peso = fields.Integer(string="Peso", required=True, )
+    estatura = fields.Integer(string="Estatura")
+    peso = fields.Integer(string="Peso" )
     imc = fields.Integer(string="IMC", readonly=True, compute='_calcula_icm')
     #Signos Vitales
     signos_vitales_id = fields.One2many('mediges.signos_vitales', 'visitas_id', string='Signos Vitales')
     #Antecedentes medico
-    covid = fields.Selection([('true', 'Si'), ('false', 'No')], 'Tuvo COVID', required=True)
+    covid = fields.Selection([('true', 'Si'), ('false', 'No')], 'Tuvo COVID',)
     examen_covid = fields.Selection([('true', 'Si'), ('false', 'No')]
-                                    , 'Muestra de sangre para anticuerpos anti-SARSCoV-2', required=True)
+                                    , 'Muestra de sangre para anticuerpos anti-SARSCoV-2')
 
     #Riesgo de embarazo
-    prueba_embaraso = fields.Selection([('true', 'Si'), ('false', 'No')], 'Prueba de embarazo en orina', required=True)
-    edad_fertil = fields.Selection([('true', 'Si'), ('false', 'No')], 'Edad Fertil', required=True)
+    prueba_embaraso = fields.Selection([('true', 'Si'), ('false', 'No')], 'Prueba de embarazo en orina')
+    edad_fertil = fields.Selection([('true', 'Si'), ('false', 'No')], 'Edad Fertil',)
     riesgo_de_embarazo = fields.Selection([('true', 'Si'), ('false', 'No')]
-                                          ,'Tiene riesgo de embarazo? (si es hombre piense en su pareja)', required=True)
+                                          ,'Tiene riesgo de embarazo? (si es hombre piense en su pareja)')
     anticoncepcion_id = fields.One2many('mediges.anticoncepcion', 'visitas_id', string='Anticoncepcion')
     #Historial Medico
     enfermedades_id = fields.One2many('mediges.visitas_enfermedades', 'visitas_id', string='Historial Medico')

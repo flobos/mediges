@@ -1,0 +1,50 @@
+<odoo>
+  <data>
+    <record model="ir.actions.act_window" id="visitas_rando_list_action">
+            <field name="name">Randomizacion</field>
+            <field name="res_model">mediges.visitas</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{"default_tipo_visita": "RANDOMIZACION"}</field>
+            <field name="domain">[('tipo_visita','=','RANDOMIZACION')]</field>
+
+    </record>
+
+    <record model="ir.ui.view" id="visitas_rando_tree_view">
+            <field name="name">Randomizacion</field>
+            <field name="model">mediges.visitas</field>
+            <field name="arch" type="xml">
+                <tree string="Randomizacion">
+                    <field name="paciente"/>
+                    <field name="tipo_visita"/>
+                    <field name="create_uid" string="Creada por"/>
+                    <field name="create_date" string="Creada el"/>
+                    <field name="write_uid" string="Modificada por"/>
+                    <field name="write_date" string="Modificada el"/>
+                </tree>
+            </field>
+    </record>
+
+    <record model="ir.ui.view" id="visitas_rando_form_view">
+        <field name="name">Randomizacion</field>
+        <field name="model">mediges.visitas</field>
+        <field name="arch" type="xml">
+          <form string="Randomizacion">
+            <header>
+                <field name="tipo_visita" widget="statusbar" string="Progreso"/>
+            </header>
+            <sheet>
+              <group string="Paciente">
+                <field name="paciente" domain="[('is_company','=',False),('name','!=','Administrator')]" />
+                <field name="numero_paciente"/>
+                <field name="demografia"/>
+              </group>
+            </sheet>
+            <div class="oe_chatter">
+                <field name="message_follower_ids" widget="mail_followers"/>
+                <field name="message_ids" widget="mail_thread"/>
+            </div>
+          </form>
+        </field>
+    </record>
+  </data>
+</odoo>

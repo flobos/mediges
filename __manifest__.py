@@ -32,6 +32,7 @@
         'views/horasmedicas.xml',
         'views/formas_de_pagos.xml',
         'views/visitas.xml',
+        'views/visitas_rando.xml',
         'views/demografia.xml',
         'views/signos_vitales.xml',
         'views/tipo_signo_vital.xml',

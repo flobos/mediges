@@ -1,28 +1,34 @@
 <odoo>
   <data>
     <record model="ir.actions.act_window" id="visitas_list_action">
-            <field name="name">Visitas</field>
+            <field name="name">Screening</field>
             <field name="res_model">mediges.visitas</field>
             <field name="view_mode">tree,form</field>
+            <field name="domain">[('tipo_visita','=','SCRENNING')]</field>
+            <field name="context">{"default_tipo_visita": "SCRENNING"}</field>
+
     </record>
 
     <record model="ir.ui.view" id="visitas_tree_view">
-            <field name="name">Visitas</field>
+            <field name="name">Screening</field>
             <field name="model">mediges.visitas</field>
             <field name="arch" type="xml">
-                <tree string="Visitas">
+                <tree string="Screening">
                     <field name="paciente"/>
+                    <field name="tipo_visita"/>
                     <field name="create_uid" string="Creada por"/>
                     <field name="create_date" string="Creada el"/>
+                    <field name="write_uid" string="Modificada por"/>
+                    <field name="write_date" string="Modificada el"/>
                 </tree>
             </field>
     </record>
 
     <record model="ir.ui.view" id="visitas_form_view">
-        <field name="name">Visitas</field>
+        <field name="name">Screening</field>
         <field name="model">mediges.visitas</field>
         <field name="arch" type="xml">
-          <form string="Visitas">
+          <form string="Screening">
             <header>
                 <field name="tipo_visita" widget="statusbar" string="Progreso"/>
             </header>

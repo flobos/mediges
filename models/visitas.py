@@ -69,6 +69,17 @@ class visitas(models.Model):
     ], default='SCRENNING', string="Tipo Visita", track_visibility='onchange')
     visitas_indicadores_id = fields.One2many('mediges.visitas_indicadores_fisicos', 'visitas_id', string='Examen Fisico')
 
+    #Rando
+    muestra_sangre_arnsec = fields.Selection([('true', 'Si'), ('false', 'No')]
+                            ,'Muestra de sangre para biomarcador de ARNsec (tubos PAXgene, sangre entera), ml.')
+    cuestionario_de_mru = fields.Selection([('true', 'Si'), ('false', 'No')]
+                            , 'Se realiza Cuestionario de MRU (versión inicial) ')
+    síntomas_previos = fields.Selection([('true', 'Si'), ('false', 'No')]
+                                           , 'Se evalúa si el paciente tiene Síntomas previos a la vacunación'
+                                             ', que pudieran ser excluyentes para la vacunación. ')
+
+
+
     @api.multi
     @api.depends('peso', 'estatura')
     def _calcula_icm(self):

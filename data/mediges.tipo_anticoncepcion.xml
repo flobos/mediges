@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="True">
+        <record model='mediges.tipo_anticoncepcion' id='1'>
+            <field name='name'>Esterilizada</field>
+        </record>
+        <record model='mediges.tipo_anticoncepcion' id='2'>
+            <field name='name'>Postmenopausica</field>
+        </record>
+        <record model='mediges.tipo_anticoncepcion' id='3'>
+            <field name='name'>Anticonceptivo</field>
+        </record>
+        <record model='mediges.tipo_anticoncepcion' id='4'>
+            <field name='name'>Dispositivo Intrauterino</field>
+        </record>
+    </data>
+</odoo>

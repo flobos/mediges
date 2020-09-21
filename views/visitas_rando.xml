@@ -48,6 +48,36 @@
                 <field name="numero_paciente"/>
                 <field name="demografia"/>
               </group>
+              <group string="Crit. de exclusion ">
+                <br/>
+                <field name="criterios_exclusion" widget="radio"/>
+                <br/>
+              </group>
+              <group string="Signos Vitales">
+                <br/>
+                <field name="signos_vitales_id" >
+                    <tree string="Signos Vitales" editable="bottom">
+                        <field name="tipo_signo_vital"/>
+
+                        <field name="valor" witget="Interger"/>
+
+                    </tree>
+                </field>
+                  <br/>
+              </group>
+              <group string="Riesgo de embarazo">
+                  <br/>
+                  <field name="prueba_embaraso" widget="radio"/>
+                  <br/>
+              </group>
+              <group string="Cuestionario">
+                  <br/>
+                  <field name="muestra_sangre_arnsec" widget="radio"/>
+                  <br/>
+                  <field name="cuestionario_de_mru" widget="radio"/>
+                  <br/>
+                  <field name="síntomas_previos" widget="radio"/>
+              </group>
             </sheet>
             <div class="oe_chatter">
                 <field name="message_follower_ids" widget="mail_followers"/>

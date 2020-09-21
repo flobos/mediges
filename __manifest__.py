@@ -48,6 +48,8 @@
         'data/ir.default.xml',
         'data/res.country.state.xml',
         'data/mediges.tipo_signos_vitales.xml',
+        'data/mediges.tipo_anticoncepcion.xml',
+        'data/mediges.indicadores_fisicos.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

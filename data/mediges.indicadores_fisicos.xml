@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="True">
+        <record model='mediges.indicadores_fisicos' id='1'>
+            <field name='name'>Aspecto General</field>
+        </record>
+        <record model='mediges.indicadores_fisicos' id='2'>
+            <field name='name'>Cabeza</field>
+        </record>
+        <record model='mediges.indicadores_fisicos' id='3'>
+            <field name='name'>Cintura</field>
+        </record>
+        <record model='mediges.indicadores_fisicos' id='4'>
+            <field name='name'>Sistema Respiratorio</field>
+        </record>
+        <record model='mediges.indicadores_fisicos' id='5'>
+            <field name='name'>Sistema Cardiovascular</field>
+        </record>
+        <record model='mediges.indicadores_fisicos' id='6'>
+            <field name='name'>Abdomen</field>
+        </record>
+        <record model='mediges.indicadores_fisicos' id='7'>
+            <field name='name'>Musculo Esqueletico</field>
+        </record>
+        <record model='mediges.indicadores_fisicos' id='8'>
+            <field name='name'>Neurologico</field>
+        </record>
+        <record model='mediges.indicadores_fisicos' id='9'>
+            <field name='name'>Cuello</field>
+        </record>
+    </data>
+</odoo>

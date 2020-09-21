@@ -1,5 +1,6 @@
 <odoo>
   <data>
+
     <record model="ir.actions.act_window" id="visitas_rando_list_action">
             <field name="name">Randomizacion</field>
             <field name="res_model">mediges.visitas</field>
@@ -8,16 +9,6 @@
             <field name="domain">[('tipo_visita','=','RANDOMIZACION')]</field>
 
     </record>
-
-    <record model="ir.actions.act_window.view" id="visitas_rando_list_action_tree_view">
-        <field name="sequence" eval="1"/>
-        <field name="view_mode">tree</field>
-        <field name="view_id" ref="visitas_rando_tree_view"/>
-        <field name="act_window_id" ref="visitas_rando_list_action"/>
-    </record>
-
-
-
 
     <record model="ir.ui.view" id="visitas_rando_tree_view">
             <field name="name">Randomizacion</field>
@@ -86,5 +77,13 @@
           </form>
         </field>
     </record>
+
+    <record model="ir.actions.act_window.view" id="visitas_rando_list_action_tree_view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="visitas_rando_tree_view"/>
+        <field name="act_window_id" ref="visitas_rando_list_action"/>
+    </record>
+
   </data>
 </odoo>

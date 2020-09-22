@@ -11,7 +11,13 @@
             <field name='name'>Frecuencia Respiratoria</field>
         </record>
         <record model='mediges.tipo_signo_vital' id='4'>
-            <field name='name'>Presión Arterial</field>
+            <field name='name'>Presión Arterial Sistolica</field>
+        </record>
+        <record model='mediges.tipo_signo_vital' id='5'>
+            <field name='name'>Presión Arterial Diastolica</field>
+        </record>
+        <record model='mediges.tipo_signo_vital' id='6'>
+            <field name='name'>SAT O2</field>
         </record>
     </data>
 </odoo>

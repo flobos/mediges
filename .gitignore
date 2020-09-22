@@ -32,6 +32,8 @@ MANIFEST
 *.manifest
 *.spec
 
+*cpython-36.pyc
+
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt

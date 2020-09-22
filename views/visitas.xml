@@ -38,7 +38,10 @@
               <group string="Paciente">
                 <field name="paciente" domain="[('is_company','=',False),('name','!=','Administrator')]" />
                 <field name="numero_paciente"/>
+                <field name="fecha_nacimiento"/>
+                <field name="edad"/>
                 <field name="demografia"/>
+                <field name="sexo"/>
               </group>
               <group string="Consentimiento">
                 <field name="consentimiento" widget="radio"/>

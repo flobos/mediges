@@ -28,8 +28,9 @@ class visitas(models.Model):
     numero_paciente = fields.Char(string="Numero Paciente", related='paciente.numero_paciente' , readonly=True)
     demografia = fields.Many2one('mediges.demografia', string="Demografia", related='paciente.demografia_id'
                                  , readonly=True)
-
-
+    fecha_nacimiento = fields.Date(string="Fecha Nacimiento", related='paciente.fecha_nacimiento', readonly=True)
+    edad = fields.Integer(string="Edad",  readonly=True, related='paciente.edad')
+    sexo = fields.Many2one('mediges.sexo', string="Sexo", related='paciente.sexo_id', readonly=True)
 
     consentimiento = fields.Selection([('true','Si'),('false','No')]
                                       ,'Se realiza proceso de Consentimiento informado, anexo 1')

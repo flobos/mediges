@@ -21,6 +21,7 @@ class pacientes(models.Model):
     rut = fields.Char(string="Rut")
     numero_paciente = fields.Char(string="N° Paciente")
     demografia_id = fields.Many2one('mediges.demografia', string="Demografia")
+    sexo_id = fields.Many2one('mediges.sexo', string="Sexo")
 
     _sql_constraints = [
         ('rut_unico', 'unique(rut)', 'Este RUT ya esta registrado ... !'),

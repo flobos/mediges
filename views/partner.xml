@@ -28,6 +28,9 @@
                 <field name="type" position="before">
                     <field name="demografia_id"/>
                 </field>
+                <field name="type" position="before">
+                    <field name="sexo_id"/>
+                </field>
 
                 <field name="mobile" position="replace">
                 </field>

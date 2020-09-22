@@ -15,5 +15,5 @@ from . import visitas_enfermedades
 from . import enfermedades
 from . import indicadores_fisicos
 from . import visitas_indicadores_fisicos
-
+from . import sexo
 

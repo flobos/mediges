@@ -24,7 +24,7 @@
         <field name="arch" type="xml">
           <form string="Demografia">
                 <sheet>
-                    <group string="Formas de Pago">
+                    <group string="Demografia">
                         <field name="name"/>
                     </group>
                 </sheet>

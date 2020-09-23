@@ -10,7 +10,7 @@
     """,
 
     'author': "Fernando Lobos",
-    'website': "http://www.tig.cl",
+    'website': "http://www.cimtalca.cl",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/master/odoo/addons/base/module/module_data.xml

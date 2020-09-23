@@ -16,4 +16,6 @@ from . import enfermedades
 from . import indicadores_fisicos
 from . import visitas_indicadores_fisicos
 from . import sexo
+from . import sitio_vacunacion
+from . import reaccion_vacuna
 

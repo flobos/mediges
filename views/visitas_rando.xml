@@ -37,7 +37,10 @@
               <group string="Paciente">
                 <field name="paciente" domain="[('is_company','=',False),('name','!=','Administrator')]" />
                 <field name="numero_paciente"/>
+                <field name="fecha_nacimiento"/>
+                <field name="edad"/>
                 <field name="demografia"/>
+                <field name="sexo"/>
               </group>
               <group string="Crit. de exclusion ">
                 <br/>
@@ -49,25 +52,47 @@
                 <field name="signos_vitales_id" >
                     <tree string="Signos Vitales" editable="bottom">
                         <field name="tipo_signo_vital"/>
-
                         <field name="valor" witget="Interger"/>
-
                     </tree>
                 </field>
                   <br/>
               </group>
-              <group string="Riesgo de embarazo">
-                  <br/>
-                  <field name="prueba_embaraso" widget="radio"/>
-                  <br/>
-              </group>
               <group string="Cuestionario">
-                  <br/>
-                  <field name="muestra_sangre_arnsec" widget="radio"/>
                   <br/>
                   <field name="cuestionario_de_mru" widget="radio"/>
                   <br/>
-                  <field name="síntomas_previos" widget="radio"/>
+                  <field name="sintomas_previos" widget="radio"/>
+                  <br/>
+                  <field name="numero_kit_rando" />
+                  <br/>
+                  <field name="muestra_sangre_arnsec" widget="radio"/>
+                  <br/>
+                  <field name="muestras_nasales_sars" widget="radio"/>
+                  <br/>
+                  <field name="capacitacion_ecoa" widget="radio"/>
+                  <br/>
+                  <field name="formulario_macov" widget="radio"/>
+                  <br/>
+                  <field name="entrega_kit_hisopado_nasal" widget="radio"/>
+                  <br/>
+                  <field name="sintomas_covid" widget="radio"/>
+                  <br/>
+                  <field name="vigilancia_sintomas_covid" widget="radio"/>
+                  <br/>
+                  <field name="inmunogenia_humoral" widget="radio"/>
+              </group>
+              <group string="Vacunación">
+                  <br/>
+                  <field name="sintomas_vacunacion" widget="radio"/>
+                  <br/>
+                  <field name="fecha_vacunacion"/>
+                  <br/>
+                  <field name="sitio_vacunacion_id"/>
+                  <br/>
+                  <field name="reaccion_vacunacion_id" widget="many2many_tags" />
+                  <br/>
+                  <field name="observacion_vacunacion" widget="radio"/>
+
               </group>
             </sheet>
             <div class="oe_chatter">

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="False">
+        <record model='mediges.tipo_visita' id='1'>
+            <field name='name'>SCRENNING</field>
+        </record>
+        <record model='mediges.tipo_visita' id='2'>
+            <field name='name'>RANDOMIZACION</field>
+        </record>
+        <record model='mediges.tipo_visita' id='3'>
+            <field name='name'>VISITA 3</field>
+        </record>
+        <record model='mediges.tipo_visita' id='4'>
+            <field name='name'>VISITA 4</field>
+        </record>
+        <record model='mediges.tipo_visita' id='5'>
+            <field name='name'>VISITA 5</field>
+        </record>
+        <record model='mediges.tipo_visita' id='6'>
+            <field name='name'>VISITA 6</field>
+        </record>
+        <record model='mediges.tipo_visita' id='7'>
+            <field name='name'>VISITA 7</field>
+        </record>
+        <record model='mediges.tipo_visita' id='8'>
+            <field name='name'>VISITA 8</field>
+        </record>
+        <record model='mediges.tipo_visita' id='9'>
+            <field name='name'>RETIRO TEMPRANO</field>
+        </record>
+    </data>
+</odoo>

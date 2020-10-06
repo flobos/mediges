@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="True">
+        <record model='mediges.sexo' id='1'>
+            <field name='name'>Masculino</field>
+        </record>
+        <record model='mediges.sexo' id='2'>
+            <field name='name'>Femenino</field>
+        </record>
+    </data>
+</odoo>

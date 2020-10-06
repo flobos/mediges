@@ -18,4 +18,6 @@ from . import visitas_indicadores_fisicos
 from . import sexo
 from . import sitio_vacunacion
 from . import reaccion_vacuna
+from . import consentimiento
+from . import tipo_visita
 

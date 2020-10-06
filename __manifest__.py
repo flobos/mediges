@@ -42,6 +42,7 @@
         'views/visitas_enfermedades.xml',
         'views/indicadores_fisicos.xml',
         'views/visitas_indicadores_fisicos.xml',
+        'views/consentimiento.xml',
         'views/menus.xml',
         'data/product.category.xml',
         'data/ir.sequence.xml',
@@ -50,6 +51,9 @@
         'data/mediges.tipo_signos_vitales.xml',
         'data/mediges.tipo_anticoncepcion.xml',
         'data/mediges.indicadores_fisicos.xml',
+        'data/mediges.tipo_visita.xml',
+        'reports/report_vistas_template.xml',
+        'reports/report_vistas.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

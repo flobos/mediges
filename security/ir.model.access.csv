@@ -12,6 +12,8 @@ hm_pro_coor_visitas_indicadores_fisicos,visitas indicadores fisicos Coor,model_m
 hm_pro_coor_sexo,visitas sexo Coor,model_mediges_sexo,group_hm_coodinador,1,0,0,0
 hm_pro_coor_sitio_vacunacion,visitas sitio vacunacion Coor,model_mediges_sitio_vacunacion,group_hm_coodinador,1,0,0,0
 hm_pro_coor_reaccion_vacunacion,visitas reaccion vacunacion Coor,model_mediges_reaccion_vacunacion,group_hm_coodinador,1,0,0,0
+hm_pro_coor_consentimiento,visitas hm_pro_coor_consentimiento Coor,model_mediges_consentimiento,group_hm_coodinador,1,0,0,0
+hm_pro_coor_tipo_visita,visitas hm_pro_coor_hm_pro_coor_tipo_visita Coor,model_mediges_tipo_visita,group_hm_coodinador,1,0,0,0
 hm_horas,Horas Secretaria,model_mediges_horasmedicas,group_hm_secretaria,1,1,1,0
 hm_horas_forma_secre,Formas Secretaria,model_mediges_formas_de_pagos,group_hm_secretaria,1,0,0,0
 hm_horas_prescrip_secre,Pres Secre,model_mediges_prescricion,group_hm_secretaria,1,0,0,0
@@ -21,7 +23,7 @@ hm_pro_sec_anticoncepcion,anticoncepcion Secre,model_mediges_anticoncepcion,grou
 hm_pro_sec_demografia,demografia Secre,model_mediges_demografia,group_hm_secretaria,1,1,1,0
 hm_pro_sec_enfermedades,enfermedades Secre,model_mediges_enfermedades,group_hm_secretaria,1,1,1,0
 hm_pro_sec_indicadores_fisicos,indicadores fisicos Secre,model_mediges_indicadores_fisicos,group_hm_secretaria,1,1,1,0
-hm_pro_sec_signos_vitales,signos vitales Secre,model_mediges_signos_vitales,group_hm_secretaria,1,1,1,0
+hm_pro_sec_signos_vitales,signos vitales Secre,model_mediges_signos_vitales,group_hm_secretaria,1,1,1,0+
 hm_pro_sec_tipo_anticoncepcion,tipo anticoncepcion Secre,model_mediges_tipo_anticoncepcion,group_hm_secretaria,1,1,1,0
 hm_pro_sec_tipo_signo_vital,tipo signo vital Secre,model_mediges_tipo_signo_vital,group_hm_secretaria,1,1,1,0
 hm_pro_sec_visitas_enfermedades,visitas enfermedades Secre,model_mediges_visitas_enfermedades,group_hm_secretaria,1,1,1,0
@@ -29,6 +31,8 @@ hm_pro_sec_visitas_indicadores_fisicos,visitas indicadores fisicos Secre,model_m
 hm_pro_sec_sexo,visitas sexo sec,model_mediges_sexo,group_hm_secretaria,1,1,1,0
 hm_pro_sec_sitio_vacunacion,visitas sitio vacunacion sec,model_mediges_sitio_vacunacion,group_hm_secretaria,1,1,1,0
 hm_pro_sec_reaccion_vacunacion,visitas reaccion vacunacion sec,model_mediges_reaccion_vacunacion,group_hm_secretaria,1,1,1,0
+hm_pro_sec_consentimiento,visitas consentimiento sec,model_mediges_consentimiento,group_hm_secretaria,1,1,1,0
+hm_pro_sec_tipo_visita,visitas tipo_visita sec,model_mediges_tipo_visita,group_hm_secretaria,1,0,0,0
 hm_horas_doc,Horas Doctor,model_mediges_horasmedicas,group_hm_doctor,1,1,1,0
 hm_horas_prescrip,Pres Doctor,model_mediges_prescricion,group_hm_doctor,1,1,1,0
 hm_horas_peri,Peru Doctor,model_mediges_periodo,group_hm_doctor,1,1,1,0
@@ -46,3 +50,5 @@ hm_pro_visitas_indicadores_fisicos,visitas indicadores fisicos Doctor,model_medi
 hm_pro_sexo,visitas sexo ,model_mediges_sexo,group_hm_doctor,1,1,1,0
 hm_pro_sitio_vacunacion,visitas sitio vacunacion ,model_mediges_sitio_vacunacion,group_hm_doctor,1,1,1,0
 hm_pro_reaccion_vacunacion,visitas reaccion vacunacion ,model_mediges_reaccion_vacunacion,group_hm_doctor,1,1,1,0
+hm_pro_consentimiento,visitas consentimiento ,model_mediges_consentimiento,group_hm_doctor,1,1,1,0
+hm_pro_tipo_visita,visitas tipo_visita ,model_mediges_tipo_visita,group_hm_doctor,1,0,0,0

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <!--<template id="report_visitas_screening">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <h2>Screening</h2>
+            </t>
+        </t>
+    </template>-->
+
+    <template id="report_visitas_main">
+         <t t-call="web.basic_layout">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout"/>
+                <div class="page">
+                    <h2>Screening</h2>
+                    <t t-esc="o.consentimiento" />
+                    <div t-field="o.paciente"
+                        t-options='{"widget": "contact", "fields": ["sexo", "name", "numero_paciente"],
+                        "no_marker": True, "phone_icons": True}'/>
+                </div>
+            </t>
+         </t>
+    </template>
+    </data>
+</odoo>

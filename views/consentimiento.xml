@@ -1,0 +1,52 @@
+<odoo>
+  <data>
+    <record model="ir.actions.act_window" id="consentimiento_list_action">
+            <field name="name">Consentimiento</field>
+            <field name="res_model">mediges.consentimiento</field>
+            <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.ui.view" id="consentimiento_tree_view">
+            <field name="name">Consentimiento</field>
+            <field name="model">mediges.consentimiento</field>
+
+            <field name="arch" type="xml">
+                <tree string="Consentimiento">
+                    <field name="fecha_inicio"/>
+                    <field name="paciente_cons_id"/>
+                    <field name="documento"/>
+                    <field name="doc_ver_electronica"/>
+                    <field name="fecha_termino"/>
+                </tree>
+            </field>
+    </record>
+
+    <record model="ir.ui.view" id="consentimiento_form_view">
+        <field name="name">Consentimiento</field>
+        <field name="model">mediges.consentimiento</field>
+        <field name="arch" type="xml">
+          <form string="Demografia">
+                <sheet>
+
+                    <field name="fecha_inicio"/>
+                    <field name="paciente_cons_id"/>
+
+                    <div class="row">
+
+                        Check this option to have menus for your event on the
+                        website: registrations, schedule, map, ...
+                        <field name="documento" nolabel="1" />
+                        Esta es una prueba
+
+                    </div>
+
+                    <field name="documento"/>
+                    <field name="doc_ver_electronica"/>
+                    <field name="fecha_termino"/>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+ </data>
+</odoo>

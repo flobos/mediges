@@ -1,15 +1,10 @@
 <odoo>
   <data>
     <record model="ir.actions.act_window" id="visitas_list_action">
-            <field name="name">Screening</field>
+            <field name="name">Visitas</field>
             <field name="res_model">mediges.visitas</field>
-            <field name="view_mode">tree,form</field>
-            <field name="domain">[('tipo_visita','=','SCRENNING')]</field>
-            <field name="context">{"default_tipo_visita": "SCRENNING"}</field>
-
+            <field name="view_mode">calendar,tree,form</field>
     </record>
-
-
 
     <record model="ir.ui.view" id="visitas_tree_view">
             <field name="name">Screening</field>
@@ -17,7 +12,7 @@
             <field name="arch" type="xml">
                 <tree string="Screening">
                     <field name="paciente"/>
-                    <field name="tipo_visita"/>
+                    <field name="tipo_visita_id"/>
                     <field name="create_uid" string="Creada por"/>
                     <field name="create_date" string="Creada el"/>
                     <field name="write_uid" string="Modificada por"/>
@@ -30,12 +25,9 @@
         <field name="name">Screening</field>
         <field name="model">mediges.visitas</field>
         <field name="arch" type="xml">
-          <form string="Screening">
-            <header>
-                <field name="tipo_visita" widget="statusbar" string="Progreso"/>
-            </header>
+          <form string="Visita">
             <sheet>
-              <group string="Paciente">
+              <group string="Paciente" attrs="{'visible': [('tipo_visita_id','=', '')]}">
                 <field name="paciente" domain="[('is_company','=',False),('name','!=','Administrator')]" />
                 <field name="numero_paciente"/>
                 <field name="fecha_nacimiento"/>
@@ -43,9 +35,16 @@
                 <field name="demografia"/>
                 <field name="sexo"/>
               </group>
+              <group string="Visita">
+                <field name="tipo_visita_id"/>
+                <field name="fecha_visita_inicio"/>
+                <field name="fecha_visita_termino"/>
+                <br/>
+              </group>
               <group string="Consentimiento">
                 <field name="consentimiento" widget="radio"/>
-                  <br/>
+                  <field name="consentimiento_id"  />
+                <br/>
                 <field name="consentimiento_desde"/>
                 <field name="consentimiento_hasta"/>
                   <br/>
@@ -101,6 +100,20 @@
             </div>
           </form>
         </field>
+    </record>
+
+    <record id="visitas_calendar" model="ir.ui.view">
+            <field name="name">Visita</field>
+            <field name="model">mediges.visitas</field>
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <calendar string="Visitas" date_start="fecha_visita_inicio" date_stop="fecha_visita_termino"
+                color="tipo_visita_id">
+                    <field name="paciente"/>
+                    <field name="tipo_visita_id"/>
+
+                </calendar>
+            </field>
     </record>
 
       <record model="ir.actions.act_window.view" id="visitas_screening_tree_view">

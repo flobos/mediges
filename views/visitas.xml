@@ -27,7 +27,7 @@
         <field name="arch" type="xml">
           <form string="Visita">
             <sheet>
-              <group string="Paciente" attrs="{'visible': [('tipo_visita_id','=', '')]}">
+              <group string="Paciente" >
                 <field name="paciente" domain="[('is_company','=',False),('name','!=','Administrator')]" />
                 <field name="numero_paciente"/>
                 <field name="fecha_nacimiento"/>
@@ -41,7 +41,7 @@
                 <field name="fecha_visita_termino"/>
                 <br/>
               </group>
-              <group string="Consentimiento">
+              <group string="Consentimiento" attrs="{'invisible': [('tipo_visita_id','!=', 1)]}">
                 <field name="consentimiento" widget="radio"/>
                   <field name="consentimiento_id"  />
                 <br/>
@@ -51,7 +51,7 @@
                 <field name="criterios_exclusion" widget="radio"/>
                   <br/>
               </group>
-              <group string="Signos Vitales">
+              <group string="Signos Vitales" attrs="{'invisible': [('tipo_visita_id','!=', 1)]}">
                 <field name="estatura" placeholder="en cm."/>
                   <br/>
                 <field name="peso" placeholder="en kgs."/>
@@ -68,7 +68,7 @@
                 </field>
                   <br/>
               </group>
-              <group string="Examen Fisico">
+              <group string="Examen Fisico" attrs="{'invisible': [('tipo_visita_id','!=', 2)]}">
                 <field name="visitas_indicadores_id"/>
               </group>
               <group string="COVID">

@@ -1,5 +1,20 @@
 <odoo>
   <data>
+
+    <record id="visitas_calendar" model="ir.ui.view">
+            <field name="name">Visita</field>
+            <field name="model">mediges.visitas</field>
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <calendar string="Visitas" date_start="fecha_visita_inicio" date_stop="fecha_visita_termino"
+                color="tipo_visita_id">
+                    <field name="paciente"/>
+                    <field name="tipo_visita_id"/>
+
+                </calendar>
+            </field>
+    </record>
+
     <record model="ir.actions.act_window" id="visitas_list_action">
             <field name="name">Visitas</field>
             <field name="res_model">mediges.visitas</field>
@@ -150,19 +165,7 @@
         </field>
     </record>
 
-    <record id="visitas_calendar" model="ir.ui.view">
-            <field name="name">Visita</field>
-            <field name="model">mediges.visitas</field>
-            <field name="priority" eval="1"/>
-            <field name="arch" type="xml">
-                <calendar string="Visitas" date_start="fecha_visita_inicio" date_stop="fecha_visita_termino"
-                color="tipo_visita_id">
-                    <field name="paciente"/>
-                    <field name="tipo_visita_id"/>
 
-                </calendar>
-            </field>
-    </record>
 
       <record model="ir.actions.act_window.view" id="visitas_screening_tree_view">
         <field name="sequence" eval="1"/>
